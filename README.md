@@ -32,7 +32,7 @@ In this repository we will place our web application, where we can control the i
 ## About the project:
 
 ### Topic
-	Movie and series tracking Website.
+	Movies and TV Series tracking Website.
 ### Database entities
 
 	- User:
@@ -54,12 +54,12 @@ In this repository we will place our web application, where we can control the i
 	- MD5 encryption algorithm.
 	
 ### Graphic information
-	We are going to use line graphics showing the genre that users like best
+	We are going to use line graphics showing the genre that users like the most.
 ### Other functionality
 
 	- Logging with facebook or google.
 	- Send e-mails.
 	- Movie and TV Series Comments.
-	- Report spam.
+	- Report spam and report spoiler comments.
 
  
