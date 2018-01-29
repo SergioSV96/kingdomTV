@@ -54,7 +54,7 @@ In this repository we will place our web application, where we can control the i
 	- MD5 encryption algorithm.
 	
 ### Graphic information
-	We are going to use line graphics showing the genre that users like the most.
+	We are going to use pie charts showing the genre that users like the most.
 ### Other functionality
 
 	- Logging with facebook or google.
