@@ -41,25 +41,25 @@ In this repository we will place our web application, where we can control the i
 		- Registered User.
 		- Administrator.
 		
-	- Movie Recommended.
-	- TV Series Recommended.
-	- Gender
+	- Movie.
+	- TV Series.
+	- Genres
 	- Viewed.
-	- Request table.
-	- Forum.
+	- Report notifications.
+	- Comments.
 	
 ### Advanced functionality
 
 	- Uses Database TMDb (The Movie Database).
-	- MD5 encryption algorithm.
+	- Logging with e-mails.
+	
 	
 ### Graphic information
 	We are going to use pie charts showing the genre that users like the most.
+	
 ### Other functionality
-
-	- Logging with facebook or google.
+	
 	- Send e-mails.
-	- Movie and TV Series Comments.
 	- Report spam and report spoiler comments.
 
  
