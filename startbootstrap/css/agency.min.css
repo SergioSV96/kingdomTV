@@ -136,7 +136,7 @@ img::-moz-selection{
 header.masthead{
     text-align:center;
     color:#fff;
-    background-image:url(../img/header-bg.jpg);
+    background-image:url(../img/header-bg2.jpg);
     background-repeat:no-repeat;
     background-attachment:scroll;
     background-position:center center;
@@ -182,7 +182,7 @@ header.masthead .intro-text .intro-heading{
         line-height:75px;
         margin-bottom:50px;
         font-family:Montserrat,'Helvetica Neue',Helvetica,Arial,sans-serif;
-        color: #202020;
+        color: #e7e1e1;
     }
 }
 .service-heading{
@@ -583,3 +583,4 @@ ul.social-buttons li a{
 ul.social-buttons li a:active,ul.social-buttons li a:focus,ul.social-buttons li a:hover{
     background-color:#03A9F4
 }
+
