@@ -87,11 +87,11 @@ img::-moz-selection{
     font-family:Montserrat,'Helvetica Neue',Helvetica,Arial,sans-serif
 }
 #mainNav .navbar-brand{
-    color:#03A9F4;
+    color:#fff;
     font-family:'Kaushan Script','Helvetica Neue',Helvetica,Arial,cursive
 }
 #mainNav .navbar-brand.active,#mainNav .navbar-brand:active,#mainNav .navbar-brand:focus,#mainNav .navbar-brand:hover{
-    color:#01579B
+    color:#0288D1;
 }
 #mainNav .navbar-nav .nav-item .nav-link{
     font-size:90%;
@@ -102,7 +102,7 @@ img::-moz-selection{
     font-family:Montserrat,'Helvetica Neue',Helvetica,Arial,sans-serif
 }
 #mainNav .navbar-nav .nav-item .nav-link.active,#mainNav .navbar-nav .nav-item .nav-link:hover{
-    color:#fed136
+    color:#0288D1
 }
 @media (min-width:992px){
     #mainNav{
@@ -173,14 +173,16 @@ header.masthead .intro-text .intro-heading{
         font-style:italic;
         line-height:40px;
         margin-bottom:25px;
-        font-family:'Droid Serif','Helvetica Neue',Helvetica,Arial,sans-serif
+        font-family:'Droid Serif','Helvetica Neue',Helvetica,Arial,sans-serif;
+        color: #202020;
     }
     header.masthead .intro-text .intro-heading{
         font-size:75px;
         font-weight:700;
         line-height:75px;
         margin-bottom:50px;
-        font-family:Montserrat,'Helvetica Neue',Helvetica,Arial,sans-serif
+        font-family:Montserrat,'Helvetica Neue',Helvetica,Arial,sans-serif;
+        color: #202020;
     }
 }
 .service-heading{
