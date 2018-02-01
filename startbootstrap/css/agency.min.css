@@ -165,11 +165,11 @@ header.masthead .intro-text .intro-heading{
 }
 @media (min-width:768px){
     header.masthead .intro-text{
-        padding-top:300px;
+        padding-top:200px;
         padding-bottom:200px
     }
     header.masthead .intro-text .intro-lead-in{
-        font-size:40px;
+        font-size:30px;
         font-style:italic;
         line-height:40px;
         margin-bottom:25px;
@@ -514,13 +514,13 @@ section#contact .form-group{
     margin-bottom:25px
 }
 section#contact .form-group input,section#contact .form-group textarea{
-    padding:20px
+    padding:10px
 }
 section#contact .form-group input.form-control{
     height:auto
 }
 section#contact .form-group textarea.form-control{
-    height:248px
+    height:188px
 }
 section#contact .form-control:focus{
     border-color:#03A9F4;
