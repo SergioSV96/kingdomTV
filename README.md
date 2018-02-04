@@ -62,4 +62,29 @@ In this repository we will place our web application, where we can control the i
 	- Send e-mails.
 	- Report spam and report spoiler comments.
 
+#### Screenshots
+Screenshots of the pages
 
+1. Inicio: Main page from the KingdomTV. In which you will be able to see a brief information about the characteristics of the website.
+
+![alt text](https://github.com/SergioSV96/kingdomTV/blob/master/KingdomTV_ScreenShots/1.JPG "Index")
+
+2. Peliculas: Page where you can find the movies section, where there are some recommendations and you can also perform an advanced search.
+
+![alt text](https://github.com/SergioSV96/kingdomTV/blob/master/KingdomTV_ScreenShots/2.JPG "Peliculas")
+
+3. Series:  Page where you can find the shows section, where there are some recommendations and you can also perform an advanced search.
+
+![alt text](https://github.com/SergioSV96/kingdomTV/blob/master/KingdomTV_ScreenShots/3.JPG "Series")
+
+4. Contacto: Here you can get in touch with the website, in case you want us to add a movie or any doubt or suggestion.
+
+![alt text](https://github.com/SergioSV96/kingdomTV/blob/master/KingdomTV_ScreenShots/4.JPG "Contacto")
+
+5. Sobre nosotros: Here you will find information about the project and its members.
+
+![alt text](https://github.com/SergioSV96/kingdomTV/blob/master/KingdomTV_ScreenShots/5.JPG "Product")
+
+6. Registro: Here you can register on our website, choosing a username and filling in the requested information.
+
+![alt text](https://github.com/SergioSV96/kingdomTV/blob/master/KingdomTV_ScreenShots/6.JPG "Registro")
