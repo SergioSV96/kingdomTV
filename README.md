@@ -62,6 +62,10 @@ In this repository we will place our web application, where we can control the i
 	- Send e-mails.
 	- Report spam and report spoiler comments.
 
+### Navigation Diagram
+![alt text](https://github.com/SergioSV96/kingdomTV/blob/master/KingdomTV_ScreenShots/Diagrama_Navegacion.JPG "Diagrama")
+
+
 ### Screenshots
 Screenshots of the pages
 
@@ -88,3 +92,7 @@ Screenshots of the pages
 6. Registro: Here you can register on our website, choosing a username and filling in the requested information.
 
 ![alt text](https://github.com/SergioSV96/kingdomTV/blob/master/KingdomTV_ScreenShots/6.JPG "Registro")
+
+7. Login: Here you can enter your account details and login.
+
+![alt text](https://github.com/SergioSV96/kingdomTV/blob/master/KingdomTV_ScreenShots/7.JPG "Login")
