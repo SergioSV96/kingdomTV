@@ -62,7 +62,7 @@ In this repository we will place our web application, where we can control the i
 	- Send e-mails.
 	- Report spam and report spoiler comments.
 
-#### Screenshots
+### Screenshots
 Screenshots of the pages
 
 1. Inicio: Main page from the KingdomTV. In which you will be able to see a brief information about the characteristics of the website.
