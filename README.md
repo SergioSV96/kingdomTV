@@ -63,7 +63,7 @@ In this repository we will place our web application, where we can control the i
 	- Report spam and report spoiler comments.
 
 ### Navigation Diagram
-![alt text](https://github.com/SergioSV96/kingdomTV/blob/master/KingdomTV_ScreenShots/Diagrama_Navegacion.jpeg "Diagrama")
+![alt text](https://github.com/SergioSV96/kingdomTV/blob/master/KingdomTV_ScreenShots/diagrama.jpg "Diagrama")
 
 
 ### Screenshots
