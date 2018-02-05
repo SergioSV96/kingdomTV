@@ -26,7 +26,7 @@ In this repository we will place our web application, where we can control the i
 
 ## Tools :
 
-- [Trello](https://trello.com/b/n1yJkrY8/kingdomtv )
+- [GitHub Projects](https://github.com/SergioSV96/kingdomTV/projects/1?fullscreen=true)
 - [Project](https://github.com/SergioSV96/kingdomTV)
 
 ## About the project:
