@@ -511,10 +511,10 @@ section#contact .section-heading{
     color:#fff
 }
 section#contact .form-group{
-    margin-bottom:25px
+    margin-bottom:5px
 }
 section#contact .form-group input,section#contact .form-group textarea{
-    padding:20px
+    padding:10px
 }
 section#contact .form-group input.form-control{
     height:auto

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Kingdom TV</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <!-- Custom styles for this template -->
+    <link href="css/agency.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/ejemplocss.css" />
+
+</head>
+
+<body id="page-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-shrink" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand js-scroll-trigger" href="index.html">Kingdom TV</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fa fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="peliculas.html">Películas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="series.html">Series</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link js-scroll-trigger" href="contacto.html">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Register -->
+    <section class="section" id="contact">
+
+        <!--   Big container   -->
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8 col-sm-offset-2">
+                    <!-- Wizard container -->
+                    <div class="wizard-container">
+                        <div class="card wizard-card" data-color="red" id="wizard">
+                            <form action="" method="">
+                                <!--        You can switch " data-color="blue" "  with one of the next bright colors: "green", "orange", "red", "purple"             -->
+
+                                <div class="wizard-header">
+                                    <h2 class="wizard-title"> Registro </h2>
+                                    <h5>Rellena todos los datos para completar tu registro.</h5>
+                                </div>
+                                <div class="wizard-navigation">
+                                    <ul>
+                                        <li>
+                                            <a href="#details" data-toggle="tab">Datos personales</a>
+                                        </li>
+                                        <li>
+                                            <a href="#captain" data-toggle="tab">Generos favoritos</a>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div class="tab-content">
+                                    <div class="tab-pane" id="details">
+                                        <div class="row">
+
+                                            <!-- ******************** SECCION DE DATOS PERSONALES *********************************************************** -->
+
+                                            <div class="col-md-6 col-sm-8 mx-auto">
+                                                <form id="contactForm" name="sentMessage" novalidate>
+                                                    <div class="row">
+                                                        <div class="col-lg-12 ">
+                                                            <div class="form-group">
+                                                                <input class="form-control" id="name" type="text" placeholder="Nombre *" required data-validation-required-message="Por favor introduce tu nombre.">
+                                                                <p class="help-block text-danger"></p>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <input class="form-control" id="phone" type="tel" placeholder="Nombre de usuario *" required data-validation-required-message="Por favor introduce tu nombre de usuario.">
+                                                                <p class="help-block text-danger"></p>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <input class="form-control" id="email" type="email" placeholder="Correo electronico *" required data-validation-required-message="Por favor introduce tu dirección de correo electónico.">
+                                                                <p class="help-block text-danger"></p>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <input class="form-control" id="phone" type="tel" placeholder="Contraseña *" required data-validation-required-message="Por favor introduce tu contraseña.">
+                                                                <p class="help-block text-danger"></p>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <input class="form-control" id="phone" type="tel" placeholder="Repita la contraseña *" required data-validation-required-message="Por favor vuelva a introducir la contraseña.">
+                                                                <p class="help-block text-danger"></p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="clearfix"></div>
+
+                                                    </div>
+                                                </form>
+                                            </div>
+
+
+                                            <!-- ******************************************************************************* -->
+
+
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" id="captain">
+                                        <h4 class="info-text">Qué generos te gustan? (elegir tres) </h4>
+                                        <div class="col-lg-12">
+
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-4 col-xs-12">
+                                                    <button type="button" class="btn btn-primary" id="accion" data-toggle="button" aria-pressed="false"  autocomplete="off">
+                                                        Acción
+                                                    </button>
+                                                </div>
+                                                <div class="col-lg-4 col-md-4 col-xs-12">
+                                                    <button type="button" class="btn btn-primary" id="comedia" data-toggle="button" aria-pressed="false" autocomplete="off">
+                                                        Comedia
+                                                    </button>
+                                                </div>
+
+                                                <div class="col-lg-4 col-md-4 col-xs-12">
+                                                    <button type="button" class="btn btn-primary" id="terror" data-toggle="button" aria-pressed="false" autocomplete="off">
+                                                        Terror
+                                                    </button>
+                                                </div>
+
+                                            </div>
+
+
+
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-4 col-xs-12">
+                                                    <button type="button" class="btn btn-primary" id="cienciaFiccion" data-toggle="button" aria-pressed="false" autocomplete="off">
+                                                        Ciencia ficción
+                                                    </button>
+                                                </div>
+
+                                                <div class="col-lg-4 col-md-4 col-xs-12">
+                                                    <button type="button" class="btn btn-primary" id="drama" data-toggle="button" aria-pressed="false" autocomplete="off">
+                                                        Drama
+                                                    </button>
+                                                </div>
+
+                                                <div class="col-lg-4 col-md-4 col-xs-12">
+                                                    <button type="button" class="btn btn-primary" id="animacion" data-toggle="button" aria-pressed="false" autocomplete="off">
+                                                        Animación
+                                                    </button>
+                                                </div>
+
+                                            </div>
+
+
+
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-4 col-xs-12">
+                                                    <button type="button" class="btn btn-primary" id="historico" data-toggle="button" aria-pressed="false" autocomplete="off">
+                                                        Histórico
+                                                    </button>
+                                                </div>
+
+                                                <div class="col-lg-4 col-md-4 col-xs-12">
+                                                    <button type="button" class="btn btn-primary" id="romantico" data-toggle="button" aria-pressed="false" autocomplete="off">
+                                                        Romántico
+                                                    </button>
+                                                </div>
+
+                                                <div class="col-lg-4 col-md-4 col-xs-12">
+                                                    <button type="button" class="btn btn-primary" id="aventuras" data-toggle="button" aria-pressed="false" autocomplete="off">
+                                                        Aventuras
+                                                    </button>
+                                                </div>
+                                            </div>
+
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wizard-footer">
+                                    <div class="pull-right">
+                                        <input type='button' class='btn btn-next btn-fill btn-danger btn-wd' name='next' value='SIGUIENTE' />
+                                        <input type='button' id="sendMessageButton" class='btn btn-finish btn-fill btn-danger btn-wd' name='finish' value='REGISTRARSE'
+                                            type="submit" />
+                                    </div>
+                                    <div class="pull-left">
+                                        <input type='button' class='btn btn-previous btn-fill btn-default btn-wd' name='previous' value='Previous' />
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- wizard container -->
+                </div>
+            </div>
+            <!-- row -->
+        </div>
+        <!--  big container -->
+
+    </section>
+
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <span class="copyright">Copyright &copy; Kingdom TV 2018</span>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline social-buttons">
+                        <li class="list-inline-item">
+                            <a href="#">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#">
+                                <i class="fa fa-google"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline quicklinks">
+                        <li class="list-inline-item">
+                            <a href="about.html">Sobre nosotros</a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#">Política de privacidad</a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#">Términos de uso</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Contact form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/agency.min.js"></script>
+    <script src="js/ejemplojs.js"></script>
+</body>
+
+</html>
