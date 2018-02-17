@@ -4,13 +4,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.stereotype.Controller;
 
 @Controller
-public class SeriesController
+public class RegisterController
 {
 
-    @RequestMapping("/series")
-    public String seriesHTML(){
+    @RequestMapping("/registro")
+    public String registroHTML(){
 
-        return "series";
+        return "registro";
     }
 
 }
