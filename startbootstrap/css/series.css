@@ -1,4 +1,13 @@
-    .section-heading,
+.reviews {
+    margin: 20px;
+}
+
+.rounded-circle {
+    width: 90px;
+    height: 90px;
+}
+
+.section-heading,
 .msgSearchBar {
     color: #fff;
 }
