@@ -825,7 +825,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 /* Facts Section
 --------------------------------*/
 #facts {
-  background: url("../img/breakingbad.jpg") center top no-repeat fixed;
+  background: url("../img/facts-bg.jpg") center top no-repeat fixed;
   background-size: cover;
   padding: 60px 0 0 0;
   position: relative;
@@ -917,7 +917,6 @@ body.mobile-nav-active #mobile-nav-toggle {
 #portfolio .portfolio-item {
   position: relative;
   height: 360px;
-  width: 200px;
   overflow: hidden;
 }
 
