@@ -122,9 +122,18 @@
     border-top-right-radius: 10px;
 }
 
-.babyDriver {
-    background: url("https://i0.wp.com/media2.slashfilm.com/slashfilm/wp/wp-content/images/baby-driver-poster.jpg");
+.film_item {
     background-size: cover;
+}
+
+.img {
+    padding: 0;
+    margin: 0;
+    height: 250px;
+    width: 100%;
+    display: block;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 .theDarkTower {
@@ -225,7 +234,9 @@
         margin: 1em;
         display: block;
     }
+
     .container {
         padding: 0;
         margin: 0;
     }
+}
