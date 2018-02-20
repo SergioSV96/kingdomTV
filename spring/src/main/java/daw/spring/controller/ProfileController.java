@@ -13,6 +13,8 @@ public class ProfileController {
     public String index(Model model)
     {
         model.addAttribute("profileName", "Joe Doe");
+        model.addAttribute("profileDescription");
+        model.addAttribute("imgProfileBackground", "https://i.imgur.com/eWtfMME.png");
         return "profile";
     }
 }
