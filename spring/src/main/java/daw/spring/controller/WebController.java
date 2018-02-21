@@ -11,7 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import daw.spring.entities.TypeFilm;
+import daw.spring.entities.Movie;
 import daw.spring.javaclass.ApiParser;
 
 @Controller
@@ -65,10 +65,10 @@ public class WebController {
     @RequestMapping("/films")
     public String peliculasHTML(@RequestParam(value="name", required=false, defaultValue="World") String title, Model model) {
         try {
-        	//Crear objeto ApiParser
+        	//Saves the API url JSON into an object
             JSONObject jo = new ApiParser().readJsonFromUrl("https://api.themoviedb.org/3/movie/550?api_key=c16e8d049b0c5c16b9f10f731876549b");
 
-            TypeFilm film = new TypeFilm(jo.getInt("id"), 1, jo.getString("original_title"), "Drama", jo.getString("release_date"), jo.getString("poster_path"));
+            Movie film = new Movie(jo.getLong("id"), 1, jo.getString("original_title"), "Drama", jo.getString("release_date"), jo.getString("poster_path"));
 
             model.addAttribute("title", film.getTitle());
             model.addAttribute("img_source", "https://image.tmdb.org/t/p/w500" + film.getImg());

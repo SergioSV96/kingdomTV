@@ -1,30 +1,56 @@
 package daw.spring.entities;
 
-public class TypeFilm {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
+@Entity
+public class Movie {
+	
+	//Internal identifier for our databases.
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private long idLocal;
+	
     //External identifier for The Movie Database.
-    private int idExternal;
-    //Internal identifier for our databases.
-    private int idLocal;
+    private long idExternal;
+   
     //Title movie.
     private String title;
+    
     //Category movie.
     private String category;
+    
     //Release date of the film
     private String releaseDate;
+    
     //Image of the movie.
     private String img;
-
-    public TypeFilm(int idE, int idL, String title, String category, String releaseDate, String img) {
-        this.idExternal = idE;
+    
+    //Comment about the movie from an user
+    private String commentary;
+    
+    
+    //Constructor needed to load from the database
+    protected Movie() {}
+    
+    //Constructor with variables
+    public Movie(long idL, long idE, String title, String category, String releaseDate,
+    			String img, String commentary) {
         this.idLocal = idL;
+        this.idExternal = idE;
         this.title = title;
         this.category = category;
         this.releaseDate = releaseDate;
         this.img = img;
+        this.commentary = commentary;
     }
 
-	public int getIdExternal() {
+    
+    //Getters and Setters
+    
+	public long getIdExternal() {
 		return idExternal;
 	}
 
@@ -32,7 +58,7 @@ public class TypeFilm {
 		this.idExternal = idExternal;
 	}
 
-	public int getIdLocal() {
+	public long getIdLocal() {
 		return idLocal;
 	}
 
@@ -71,5 +97,15 @@ public class TypeFilm {
 	public void setImg(String img) {
 		this.img = img;
 	}
+
+	public String getCommentary() {
+		return commentary;
+	}
+
+	public void setCommentary(String commentary) {
+		this.commentary = commentary;
+	}
+	
+	
     
 }
