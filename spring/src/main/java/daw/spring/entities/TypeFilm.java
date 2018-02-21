@@ -1,88 +1,75 @@
 package daw.spring.entities;
 
-public class TypeFilm
-{
+public class TypeFilm {
 
     //External identifier for The Movie Database.
-    private int id_external;
+    private int idExternal;
     //Internal identifier for our databases.
-    private int id_local;
+    private int idLocal;
     //Title movie.
     private String title;
     //Category movie.
     private String category;
     //Release date of the film
-    private String release_date;
-    //Img of the movie.
+    private String releaseDate;
+    //Image of the movie.
     private String img;
 
-    public TypeFilm(int id_e, int id_l, String title, String category, String release_date, String img)
-    {
-        this.id_external = id_e;
-        this.id_local = id_l;
+    public TypeFilm(int idE, int idL, String title, String category, String releaseDate, String img) {
+        this.idExternal = idE;
+        this.idLocal = idL;
         this.title = title;
         this.category = category;
-        this.release_date = release_date;
+        this.releaseDate = releaseDate;
         this.img = img;
     }
 
-    public int Get_IdExternal()
-    {
-        return this.id_external;
-    }
+	public int getIdExternal() {
+		return idExternal;
+	}
 
-    public void Set_IdExternal(int id)
-    {
-        this.id_external = id;
-    }
+	public void setIdExternal(int idExternal) {
+		this.idExternal = idExternal;
+	}
 
-    public int Get_IdLocal()
-    {
-        return this.id_local;
-    }
+	public int getIdLocal() {
+		return idLocal;
+	}
 
-    public void Set_IdLocal(int id)
-    {
-        this.id_local = id;
-    }
+	public void setIdLocal(int idLocal) {
+		this.idLocal = idLocal;
+	}
 
-    public String Get_Title()
-    {
-        return this.title;
-    }
+	public String getTitle() {
+		return title;
+	}
 
-    public void Set_Title(String title)
-    {
-        this.title = title;
-    }
+	public void setTitle(String title) {
+		this.title = title;
+	}
 
-    public String Get_Category()
-    {
-        return this.category;
-    }
+	public String getCategory() {
+		return category;
+	}
 
-    public void Set_Category(String category)
-    {
-        this.category = category;
-    }
+	public void setCategory(String category) {
+		this.category = category;
+	}
 
-    public String Get_ReleaseDate()
-    {
-        return this.release_date;
-    }
+	public String getReleaseDate() {
+		return releaseDate;
+	}
 
-    public void Set_ReleaseDate(String release_date)
-    {
-        this.release_date = release_date;
-    }
+	public void setReleaseDate(String releaseDate) {
+		this.releaseDate = releaseDate;
+	}
 
-    public String Get_Img()
-    {
-        return this.img;
-    }
+	public String getImg() {
+		return img;
+	}
 
-    public void Set_Img(String img)
-    {
-        this.img = img;
-    }
+	public void setImg(String img) {
+		this.img = img;
+	}
+    
 }
