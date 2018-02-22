@@ -2,6 +2,7 @@ package daw.spring.entities;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -23,7 +24,7 @@ public class Movie {
     private String title;
     
     //Genres of the movie.
-    @OneToMany(mappedBy="movie")
+    @OneToMany(cascade=CascadeType.ALL)
     private List<Genre> genres;
     
     //Synopsis of the movie
@@ -36,7 +37,7 @@ public class Movie {
     private String poster;
     
     //Comment about the movie from an user
-    @OneToMany(mappedBy="comment")
+    @OneToMany(mappedBy="movie")
     private List<Comment> comments;
     
     
