@@ -1,9 +1,12 @@
 package daw.spring.entities;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Movie {
@@ -16,54 +19,59 @@ public class Movie {
     //External identifier for The Movie Database.
     private long idExternal;
    
-    //Title movie.
+    //Title of the movie.
     private String title;
     
-    //Category movie.
-    private String category;
+    //Genres of the movie.
+    @OneToMany(mappedBy="movie")
+    private List<Genre> genres;
+    
+    //Synopsis of the movie
+    private String synopsis;
     
     //Release date of the film
     private String releaseDate;
     
     //Image of the movie.
-    private String img;
+    private String poster;
     
     //Comment about the movie from an user
-    private String commentary;
+    @OneToMany(mappedBy="comment")
+    private List<Comment> comments;
     
     
     //Constructor needed to load from the database
     protected Movie() {}
     
     //Constructor with variables
-    public Movie(long idL, long idE, String title, String category, String releaseDate,
-    			String img, String commentary) {
-        this.idLocal = idL;
+    public Movie(long idE, String title, List<Genre> genres, String synopsis, String releaseDate,
+    			String poster, List<Comment> comments) {
+    	
         this.idExternal = idE;
         this.title = title;
-        this.category = category;
+        this.genres = genres;
+        this.synopsis = synopsis;
         this.releaseDate = releaseDate;
-        this.img = img;
-        this.commentary = commentary;
+        this.poster = poster;
     }
 
     
     //Getters and Setters
     
-	public long getIdExternal() {
-		return idExternal;
-	}
-
-	public void setIdExternal(int idExternal) {
-		this.idExternal = idExternal;
-	}
-
 	public long getIdLocal() {
 		return idLocal;
 	}
 
-	public void setIdLocal(int idLocal) {
+	public void setIdLocal(long idLocal) {
 		this.idLocal = idLocal;
+	}
+
+	public long getIdExternal() {
+		return idExternal;
+	}
+
+	public void setIdExternal(long idExternal) {
+		this.idExternal = idExternal;
 	}
 
 	public String getTitle() {
@@ -74,12 +82,20 @@ public class Movie {
 		this.title = title;
 	}
 
-	public String getCategory() {
-		return category;
+	public List<Genre> getGenres() {
+		return genres;
 	}
 
-	public void setCategory(String category) {
-		this.category = category;
+	public void setGenres(List<Genre> genres) {
+		this.genres = genres;
+	}
+
+	public String getSynopsis() {
+		return synopsis;
+	}
+
+	public void setSynopsis(String synopsis) {
+		this.synopsis = synopsis;
 	}
 
 	public String getReleaseDate() {
@@ -90,22 +106,20 @@ public class Movie {
 		this.releaseDate = releaseDate;
 	}
 
-	public String getImg() {
-		return img;
+	public String getPoster() {
+		return poster;
 	}
 
-	public void setImg(String img) {
-		this.img = img;
+	public void setPoster(String poster) {
+		this.poster = poster;
 	}
 
-	public String getCommentary() {
-		return commentary;
+	public List<Comment> getComments() {
+		return comments;
 	}
 
-	public void setCommentary(String commentary) {
-		this.commentary = commentary;
-	}
+	public void setComments(List<Comment> comments) {
+		this.comments = comments;
+	}    
 	
-	
-    
 }

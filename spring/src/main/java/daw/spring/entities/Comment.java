@@ -1,9 +1,11 @@
 package daw.spring.entities;
 
 import javax.persistence.Entity;
+
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 
 @Entity
@@ -14,23 +16,28 @@ public class Comment {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 		
-	//Nickname of the user that commented
-	private String nickname;
+	//User that commented
+	@ManyToOne
+	private User user;
 	
-	//Profile image of the user that commented
-	private String image;
+	//Movie commented
+	@ManyToOne
+	private Movie movie;
 	
+	//Message written
 	private String message;
 	
 	//Constructor needed to load from the database
     protected Comment() {}
     
     //Constructor with variables
-    public Comment(String nick, String img, String msg) {
-    	this.nickname = nick;
-    	this.image = img;
+    public Comment(User user, String msg) {
+    	this.user = user;
     	this.message = msg;
     }
+    
+    
+    //Getters and Setters
 
 	public long getId() {
 		return id;
@@ -40,20 +47,20 @@ public class Comment {
 		this.id = id;
 	}
 
-	public String getNickname() {
-		return nickname;
+	public User getUser() {
+		return user;
 	}
 
-	public void setNickname(String nickname) {
-		this.nickname = nickname;
+	public void setUser(User user) {
+		this.user = user;
 	}
 
-	public String getImage() {
-		return image;
+	public Movie getMovie() {
+		return movie;
 	}
 
-	public void setImage(String image) {
-		this.image = image;
+	public void setMovie(Movie movie) {
+		this.movie = movie;
 	}
 
 	public String getMessage() {
@@ -63,10 +70,6 @@ public class Comment {
 	public void setMessage(String message) {
 		this.message = message;
 	}
-    
-    
-    //Getter and Setters
 
-    
     
 }

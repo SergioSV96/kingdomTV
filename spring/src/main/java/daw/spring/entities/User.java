@@ -1,9 +1,12 @@
 package daw.spring.entities;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class User {
@@ -27,6 +30,10 @@ public class User {
 	
 	//Profile image.jpg
 	private String image;
+	
+	//User comments
+	@OneToMany(mappedBy="user")
+	private List<Comment> comments;
 	
 	//User type: admin,member,etc. 
 	private String type;
@@ -93,6 +100,14 @@ public class User {
 		this.image = image;
 	}
 
+	public List<Comment> getComments() {
+		return comments;
+	}
+
+	public void setComments(List<Comment> comments) {
+		this.comments = comments;
+	}
+
 	public String getType() {
 		return type;
 	}
@@ -100,6 +115,7 @@ public class User {
 	public void setType(String type) {
 		this.type = type;
 	}
+	
 	
 	
 

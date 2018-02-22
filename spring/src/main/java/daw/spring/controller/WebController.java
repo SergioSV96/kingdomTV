@@ -66,10 +66,12 @@ public class WebController {
     public String peliculasHTML(@RequestParam(value="name", required=false, defaultValue="World") String title, Model model) {
         try {
         	//Saves the API url JSON into an object
-            JSONObject jo = new ApiParser().readJsonFromUrl("https://api.themoviedb.org/3/movie/550?api_key=c16e8d049b0c5c16b9f10f731876549b");
+            JSONObject jo = new ApiParser().readJsonFromUrl("https://api.themoviedb.org/3/movie/550?api_key=c16e8d049b0c5c16b9f10f731876549b&language=es-ES");
 
-            Movie film = new Movie(jo.getLong("id"), 1, jo.getString("original_title"), "Drama", jo.getString("release_date"), jo.getString("poster_path"));
-
+            Movie film = new Movie(jo.getLong("id"), jo.getString("original_title"),
+            		jo.getString("genres[0].name"), jo.getString("overview"), jo.getString("release_date"),
+            		jo.getString("poster_path"), "");
+          
             model.addAttribute("title", film.getTitle());
             model.addAttribute("img_source", "https://image.tmdb.org/t/p/w500" + film.getImg());
             model.addAttribute("datetime", film.getReleaseDate());
