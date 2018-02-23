@@ -1,6 +1,8 @@
-package daw.spring.controller;
+package daw.spring.controllers;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -11,6 +13,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import daw.spring.entities.Genre;
 import daw.spring.entities.Movie;
 import daw.spring.javaclass.ApiParser;
 
@@ -62,19 +65,63 @@ public class WebController {
         return "infopeli";
     }
     
+    @RequestMapping("/profile")
+    public String index(Model model)
+    {
+        model.addAttribute("profileName", "Joe Doe");
+        model.addAttribute("profileDescription");
+        model.addAttribute("imgProfileBackground", "https://i.imgur.com/eWtfMME.png");
+        return "profile";
+    }
+    
+    
+    /*
+    @RequestMapping("/films")
+    public String peliculasHTML(@RequestParam(value="name", required=false, defaultValue="World") String title, Model model) {
+        try {
+        	//Saves the API url JSON into an object
+            JSONObject jo = new ApiParser().readJsonFromUrl("https://api.themoviedb.org/3/movie/550?api_key=c16e8d049b0c5c16b9f10f731876549b&language=es-ES");
+            List<Genre> genresList = new ArrayList<>();
+            for (int i = 0; i < jo.getJSONArray("genre").length()-1; i++) {
+            	genresList.add(new Genre(jo.getString("genres[i].name")));
+            }
+            
+            //public Movie(long idE, String title, List<Genre> genres, String synopsis, String releaseDate,
+			//String poster, List<Comment> comments) {
+            
+            Movie movie = new Movie(jo.getLong("id"), jo.getString("original_title"),
+            		genresList, jo.getString("overview"), jo.getString("release_date"),
+            		jo.getString("poster_path"), null);
+          
+            model.addAttribute("title", movie.getTitle());
+            //model.addAttribute("poster", "https://image.tmdb.org/t/p/w500" + movie.getPoster());
+            model.addAttribute("datetime", movie.getReleaseDate());
+        }
+        catch (IOException e)
+        {
+
+        }
+        catch (JSONException f)
+        {
+
+        }
+
+        return "peliculas";
+    }*/
+    
     @RequestMapping("/films")
     public String peliculasHTML(@RequestParam(value="name", required=false, defaultValue="World") String title, Model model) {
         try {
         	//Saves the API url JSON into an object
             JSONObject jo = new ApiParser().readJsonFromUrl("https://api.themoviedb.org/3/movie/550?api_key=c16e8d049b0c5c16b9f10f731876549b&language=es-ES");
 
-            Movie film = new Movie(jo.getLong("id"), jo.getString("original_title"),
-            		jo.getString("genres[0].name"), jo.getString("overview"), jo.getString("release_date"),
-            		jo.getString("poster_path"), "");
+            Movie movie = new Movie(jo.getLong("id"), jo.getString("original_title"),
+            		null, jo.getString("overview"), jo.getString("release_date"),
+            		jo.getString("poster_path"), null);
           
-            model.addAttribute("title", film.getTitle());
-            model.addAttribute("img_source", "https://image.tmdb.org/t/p/w500" + film.getImg());
-            model.addAttribute("datetime", film.getReleaseDate());
+            model.addAttribute("title", movie.getTitle());
+            model.addAttribute("poster", "https://image.tmdb.org/t/p/w200" + movie.getPoster());
+            model.addAttribute("datetime", movie.getReleaseDate());
         }
         catch (IOException e)
         {
