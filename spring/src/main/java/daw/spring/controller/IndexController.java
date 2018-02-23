@@ -14,7 +14,7 @@ public class IndexController {
     @RequestMapping("/")
     public String index(Model model) {
         log.info("Root path");
-        model.addAttribute("test", "testAttribute");
+        model.addAttribute("profileName","Prueba de KingomTV");
         return "index";
     }
 

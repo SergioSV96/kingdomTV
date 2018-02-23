@@ -17,6 +17,7 @@ import java.util.Optional;
 public class ProfileController
 {
 
+
     @Autowired
     private UserSecurity userSecurity;
 
@@ -39,5 +40,14 @@ public class ProfileController
         roles.add("USER");
 
     }
+
+    @RequestMapping("/profile")
+    public String ProfileController (Model model)
+    {
+        model.addAttribute("profileName","Prueba de KingomTV");
+
+        return "profile";
+    }
+
 
 }

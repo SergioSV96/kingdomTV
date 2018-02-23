@@ -2,15 +2,18 @@ package daw.spring.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 
 @Controller
 public class RegisterController
 {
 
-    @RequestMapping("/registro")
-    public String registroHTML(){
+    @RequestMapping("/register")
+    public String registerHTML(Model model){
 
-        return "registro";
+        model.addAttribute("profileName","Prueba de KingomTV");
+
+        return "register";
     }
 
 }
