@@ -1,7 +1,6 @@
 package daw.spring.controller;
 
-import daw.spring.entities.TypeUser;
-import daw.spring.repository.UserRepository;
+import daw.spring.entities.User;
 import daw.spring.security.UserSecurity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -22,37 +21,23 @@ public class ProfileController
     private UserSecurity userSecurity;
 
     @RequestMapping("/add_new_user")
-    public String add_new_user(Model model, TypeUser user){
-        repository.save(user);
+    public String add_new_user(Model model, User user){
+        //repository.save(user);
         return "index";
     }
 
 
     @Autowired
-    private UserRepository repository;
+    private UserSecurity repository;
 
     @PostConstruct
     public void init()
     {
 
-        List<String> roles = new ArrayList<>();
+        List<String> roles = new ArrayList<String>();
         roles.add("ADMIN");
         roles.add("USER");
 
-        TypeUser u1 = new TypeUser("LTNs35", "migueltg352340@gmail.com", "password", true, roles);
-        repository.save(u1);
-
-    }
-    @RequestMapping("/profile")
-    public String serveUserProfile(Model model, @RequestParam Optional<String> emailUser, @RequestParam Optional<String> passUser, @RequestParam Optional<Boolean> sent) {
-        if(sent.isPresent()) {
-            emailUser.ifPresent(s -> userSecurity.getLoggedUser().setEmail(s));
-            if(!passUser.get().equals("")) {
-                userSecurity.getLoggedUser().setPasswordHash(passUser.get());
-            }
-            repository.save(userSecurity.getLoggedUser());
-        }
-        return "profile";
     }
 
 }

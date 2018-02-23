@@ -151,17 +151,17 @@ Header
 
             <div class="row portfolio-container">
                 {{#recommendedFilms}}
-                <div class="col-lg-4 col-md-6 portfolio-item {{genre}} wow fadeInUp" data-wow-delay="0.2s">
+                <div class="col-lg-4 col-md-6 portfolio-item genre1 wow fadeInUp" data-wow-delay="0.2s">
                     <div class="portfolio-wrap">
                         <figure>
-                            <img src="{{poster_path}}" class="img-fluid" alt="">
+                            <img src="{{poster}}" class="img-fluid" alt="">
                         </figure>
 
                         <div class="portfolio-info">
                             <h4>
                                 <a href="#">{{title}}</a>
                             </h4>
-                            <p>{{release_date}}</p>
+                            <p>{{releaseDate}}</p>
                         </div>
                     </div>
                 </div>
@@ -193,7 +193,7 @@ Header
 
     </section>
     <!-- #portfolio -->
-
+</main>
 
     <!--==========================
 Footer

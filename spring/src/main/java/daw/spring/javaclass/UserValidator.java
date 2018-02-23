@@ -1,4 +1,4 @@
-package daw.spring;
+package daw.spring.javaclass;
 
 import daw.spring.entities.TypeUser;
 import org.springframework.validation.Errors;

@@ -1,5 +1,7 @@
 package daw.spring.entities;
 
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -46,7 +48,7 @@ public class User {
 		this.name = name;
 		this.nickname = nick;
 		this.email = email;
-		this.password = pass;
+		this.password = new BCryptPasswordEncoder().encode(pass);
 	}
 
 	

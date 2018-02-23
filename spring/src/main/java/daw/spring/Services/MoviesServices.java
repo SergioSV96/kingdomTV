@@ -1,9 +1,7 @@
 package daw.spring.Services;
 
-
-import daw.spring.entities.TypeCategoryFilm;
-import daw.spring.entities.TypeFilm;
-import daw.spring.repository.FilmRepository;
+import daw.spring.entities.Movie;
+import daw.spring.repositories.MovieRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -12,26 +10,22 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class MoviesServices
-{
+public class MoviesServices {
 
     @Autowired
-    private FilmRepository filmRepository;
+    private MovieRepository movieRepository;
 
-    public Page<TypeFilm> getAllFilms(Pageable page) {
-        return filmRepository.findAll(page);
+    public Page<Movie> getAllFilms(Pageable page) {
+        return movieRepository.findAll(page);
     }
 
-    public List<TypeFilm> getAllPFilms() {
-        return  filmRepository.findAll();
+    public List<Movie> getAllPFilms() {
+        return movieRepository.findAll();
     }
 
-    public TypeFilm findOne(long id) {
-        return filmRepository.findOne(id);
+    public Movie findOne(long id) {
+        return movieRepository.findOne(id);
     }
 
-    public Page<TypeFilm> getAllByGenre(Pageable page, TypeCategoryFilm cat) {
-        return filmRepository.findByGenre(page, cat);
-    }
 
 }
