@@ -1,0 +1,98 @@
+@import url(http://weloveiconfonts.com/api/?family=entypo);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700);
+[class*="entypo-"]:before {
+  font-family: 'entypo', sans-serif;
+}
+
+*, div {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+
+/*.container {
+  display: block;
+  width: 70%;
+  margin: 20px auto 0 auto;
+  background: #fff;
+  height: 100vh;
+}
+*/
+.sw {
+  float: left;
+  width: 100%;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: 0 2px 0 0px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 2px 0 0px rgba(0, 0, 0, 0.1);
+}
+.sw form {
+  float: left;
+  width: 100%;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.sw .search {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+  outline: none;
+  border: none;
+  border-radius: 0;
+  background: #fff;
+  padding: 10px;
+  font-family: 'Roboto', sans-serif;
+  height: 50px;
+  -webkit-transition: all 0.05s ease-in-out;
+  transition: all 0.05s ease-in-out;
+  -webkit-appearance: none;
+}
+/*
+.sw .search:focus {
+  height: 80px;
+  margin-left: -15px;
+  padding: 10px 15px;
+}
+.sw .search:focus + .go {
+  height: 80px;
+  margin-right: -15px;
+  max-width: 80px;
+  color: #533687;
+}
+.sw .search:focus + .go + a.logo {
+  visibility: hidden;
+  opacity: 0;
+  max-width: 0px;
+  margin-right: 0;
+}*/
+.sw .go {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  -webkit-box-ordinal-group: 4;
+      -ms-flex-order: 3;
+          order: 3;
+  max-width: 50px;
+  display: inline-block;
+  border: none;
+  background: #fff;
+  color: #ccc;
+  height: 50px;
+  -webkit-transition: all 0.05s ease-in-out;
+  transition: all 0.05s ease-in-out;
+  font-size: 21px;
+  outline: none;
+}
