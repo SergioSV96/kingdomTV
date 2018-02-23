@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="utf-8">
@@ -25,9 +25,18 @@
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
     <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
 
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap core CSS -->
+
     <!-- Main Stylesheet File -->
     <link href="css/style.css" rel="stylesheet">
-    <link href="css/profile.css" rel="stylesheet">
+
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.min.css" rel="stylesheet">
+
+
+    <link href="css/movies.css" rel="stylesheet">
 
     <!-- =======================================================
     Theme Name: BizPage
@@ -43,34 +52,33 @@
     <!--==========================
     Header
   ============================-->
-    <header id="header" class="header-scrolled"> 
+    <header id="header" class="header-scrolled">
         <div class="container-fluid">
 
             <div id="logo" class="pull-left">
-                <h1>
-                    <a href="#intro" class="scrollto">KingdomTV</a>
-                </h1>
+                <!-- <h1><a href="#intro" class="scrollto">KingdomTV</a></h1>-->
                 <!-- Uncomment below if you prefer to use an image logo -->
-                <a href="#intro"><img src="img/logo.png" alt="" title="" /></a>
+                <a href="index.html">
+                    <img src="img/logo/logo.png" alt="" title="" />
+                </a>
             </div>
 
             <nav id="nav-menu-container">
                 <ul class="nav-menu">
-                    
                     <li>
-                        <a href="/inicio">Inicio</a>
+                        <a href="index.html">Inicio</a>
+                    </li>
+                    <li class="menu-active">
+                        <a href="movies.html">Peliculas</a>
                     </li>
                     <li>
-                        <a href="/peliculas">Peliculas</a>
+                        <a href="series.html">Series</a>
                     </li>
                     <li>
-                        <a href="/series">Series</a>
-                    </li>
-                    <li>
-                        <a href="/contacto">Contacto</a>
+                        <a href="contact.html">Contacto</a>
                     </li>
                     <li class="menu-has-children">
-                        <a href="">{{profileName}}</a>
+                        <a href="profile.html">{{profileName}}</a>
                         <ul>
                             <li>
                                 <a href="#">Perfil</a>
@@ -91,16 +99,14 @@
     <!-- #header -->
 
     <main id="main">
-
         <!--==========================
       Profile Section
     ============================-->
         <section id="about">
             <div class="container">
-
                 <header class="section-header">
-                    <h3>{{profileName}}</h3>
-                    <p>Información sobre el usario, descripcion de si mismo</p>
+                    <h3>Peliculas</h3>
+                    <p>Slogan</p>
                 </header>
 
             </div>
@@ -108,11 +114,15 @@
 
         <section>
             <div class="align-content-sm-center">
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Buscar películas...">
-                    <span class="input-group-btn">
-                        <button class="btn btn-secondary" type="button">Ver!</button>
-                    </span>
+                <div class="container">
+                    <div class="sw">
+                        <form>
+                            <input type="search" class="search" placeholder="Buscar..." />
+                            <button class="go">
+                                <span class="entypo-search"></span>
+                            </button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </section>
@@ -131,341 +141,170 @@
                     <div class="col-lg-12">
                         <ul id="portfolio-flters">
                             <li data-filter="*" class="filter-active">Todos</li>
-                            <li data-filter=".filter-genre1">Género 1</li>
-                            <li data-filter=".filter-genre2">Género 2</li>
-                            <li data-filter=".filter-genre3">Género 3</li>
+                            <li data-filter=".filter-genre1">Más vistas</li>
+                            <li data-filter=".filter-genre2">Mejor valoradas</li>
+                            <li data-filter=".filter-genre3">Más premiadas</li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="row portfolio-container">
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-genre1 wow fadeInUp">
-                        <div class="portfolio-wrap">
-                            <figure>
-                                <img src="img/6.jpg" class="img-fluid" alt="">
-                                <a href="img/6.jpg" data-lightbox="portfolio" data-title="App 1" class="link-preview" title="Preview">
-                                    <i class="ion ion-eye"></i>
-                                </a>
-                                <a href="#" class="link-details" title="More Details">
-                                    <i class="ion ion-android-open"></i>
-                                </a>
-                            </figure>
-
-                            <div class="portfolio-info">
-                                <h4>
-                                    <a href="#">Titulo</a>
-                                </h4>
-                                <p>Género 1</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-genre3 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="portfolio-wrap">
-                            <figure>
-                                <img src="img/portfolio/web3.jpg" class="img-fluid" alt="">
-                                <a href="img/portfolio/web3.jpg" class="link-preview" data-lightbox="portfolio" data-title="Web 3" title="Preview">
-                                    <i class="ion ion-eye"></i>
-                                </a>
-                                <a href="#" class="link-details" title="More Details">
-                                    <i class="ion ion-android-open"></i>
-                                </a>
-                            </figure>
-
-                            <div class="portfolio-info">
-                                <h4>
-                                    <a href="#">Web 3</a>
-                                </h4>
-                                <p>Género 3</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-genre1 wow fadeInUp" data-wow-delay="0.2s">
-                        <div class="portfolio-wrap">
-                            <figure>
-                                <img src="img/portfolio/app2.jpg" class="img-fluid" alt="">
-                                <a href="img/portfolio/app2.jpg" class="link-preview" data-lightbox="portfolio" data-title="App 2" title="Preview">
-                                    <i class="ion ion-eye"></i>
-                                </a>
-                                <a href="#" class="link-details" title="More Details">
-                                    <i class="ion ion-android-open"></i>
-                                </a>
-                            </figure>
-
-                            <div class="portfolio-info">
-                                <h4>
-                                    <a href="#">App 2</a>
-                                </h4>
-                                <p>Género 1</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-genre2 wow fadeInUp">
-                        <div class="portfolio-wrap">
-                            <figure>
-                                <img src="img/portfolio/card2.jpg" class="img-fluid" alt="">
-                                <a href="img/portfolio/card2.jpg" class="link-preview" data-lightbox="portfolio" data-title="Card 2" title="Preview">
-                                    <i class="ion ion-eye"></i>
-                                </a>
-                                <a href="#" class="link-details" title="More Details">
-                                    <i class="ion ion-android-open"></i>
-                                </a>
-                            </figure>
-
-                            <div class="portfolio-info">
-                                <h4>
-                                    <a href="#">Card 2</a>
-                                </h4>
-                                <p>Género 2</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-genre3 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="portfolio-wrap">
-                            <figure>
-                                <img src="img/portfolio/web2.jpg" class="img-fluid" alt="">
-                                <a href="img/portfolio/web2.jpg" class="link-preview" data-lightbox="portfolio" data-title="Web 2" title="Preview">
-                                    <i class="ion ion-eye"></i>
-                                </a>
-                                <a href="#" class="link-details" title="More Details">
-                                    <i class="ion ion-android-open"></i>
-                                </a>
-                            </figure>
-
-                            <div class="portfolio-info">
-                                <h4>
-                                    <a href="#">Web 2</a>
-                                </h4>
-                                <p>Género 3</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-genre1 wow fadeInUp" data-wow-delay="0.2s">
-                        <div class="portfolio-wrap">
-                            <figure>
-                                <img src="img/portfolio/app3.jpg" class="img-fluid" alt="">
-                                <a href="img/portfolio/app3.jpg" class="link-preview" data-lightbox="portfolio" data-title="App 3" title="Preview">
-                                    <i class="ion ion-eye"></i>
-                                </a>
-                                <a href="#" class="link-details" title="More Details">
-                                    <i class="ion ion-android-open"></i>
-                                </a>
-                            </figure>
-
-                            <div class="portfolio-info">
-                                <h4>
-                                    <a href="#">App 3</a>
-                                </h4>
-                                <p>Género 1</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-genre2 wow fadeInUp">
-                        <div class="portfolio-wrap">
-                            <figure>
-                                <img src="img/portfolio/card1.jpg" class="img-fluid" alt="">
-                                <a href="img/portfolio/card1.jpg" class="link-preview" data-lightbox="portfolio" data-title="Card 1" title="Preview">
-                                    <i class="ion ion-eye"></i>
-                                </a>
-                                <a href="#" class="link-details" title="More Details">
-                                    <i class="ion ion-android-open"></i>
-                                </a>
-                            </figure>
-
-                            <div class="portfolio-info">
-                                <h4>
-                                    <a href="#">Card 1</a>
-                                </h4>
-                                <p>Género 2</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-genre2 wow fadeInUp" data-wow-delay="0.1s">
-                        <div class="portfolio-wrap">
-                            <figure>
-                                <img src="img/portfolio/card3.jpg" class="img-fluid" alt="">
-                                <a href="img/portfolio/card3.jpg" class="link-preview" data-lightbox="portfolio" data-title="Card 3" title="Preview">
-                                    <i class="ion ion-eye"></i>
-                                </a>
-                                <a href="#" class="link-details" title="More Details">
-                                    <i class="ion ion-android-open"></i>
-                                </a>
-                            </figure>
-
-                            <div class="portfolio-info">
-                                <h4>
-                                    <a href="#">Card 3</a>
-                                </h4>
-                                <p>Género 2</p>
-                            </div>
-                        </div>
-                    </div>
-
+                        {{#each blogs}}
                     <div class="col-lg-4 col-md-6 portfolio-item filter-genre3 wow fadeInUp" data-wow-delay="0.2s">
                         <div class="portfolio-wrap">
                             <figure>
-                                <img src="img/portfolio/web1.jpg" class="img-fluid" alt="">
-                                <a href="img/portfolio/web1.jpg" class="link-preview" data-lightbox="portfolio" data-title="Web 1" title="Preview">
-                                    <i class="ion ion-eye"></i>
-                                </a>
-                                <a href="#" class="link-details" title="More Details">
-                                    <i class="ion ion-android-open"></i>
-                                </a>
+                                <img src="{{FilmImg}}" class="img-fluid" alt="">
                             </figure>
 
                             <div class="portfolio-info">
                                 <h4>
-                                    <a href="#">Web 1</a>
+                                    <a href="#">{{FilmTitle}}</a>
                                 </h4>
-                                <p>Género 3</p>
+                                <p>{{FilmDate}}</p>
                             </div>
                         </div>
                     </div>
-
+                    {{/each}}
                 </div>
 
             </div>
+            <div class="text-center moreContentButton">
+                <i class="fa fa-plus-circle fa-3x fa-fw" id="moreContent"></i>
+            </div>
+            </div>
+
+            <header class="section-header">
+                <h3 class="section-title">Últimas peliculas</h3>
+            </header>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul id="portfolio-flters">
+                        <li data-filter="*" class="filter-active">Todos</li>
+                        <li data-filter=".filter-genre1">Drama</li>
+                        <li data-filter=".filter-genre2">Acción</li>
+                        <li data-filter=".filter-genre3">Terror</li>
+                        <li data-filter=".filter-genre4">Aventuras</li>
+                        <li data-filter=".filter-genre5">Comedia</li>
+                        <li data-filter=".filter-genre6">Historica</li>
+                    </ul>
+                </div>
+            </div>
+
         </section>
         <!-- #portfolio -->
 
-        
-    <!--==========================
+
+        <!--==========================
     Footer
   ============================-->
-    <footer id="footer">
-        <div class="footer-top">
-            <div class="container">
-                <div class="row">
+        <footer id="footer">
+            <div class="footer-top">
+                <div class="container">
+                    <div class="row">
 
-                    <div class="col-lg-3 col-md-6 footer-info">
-                        <h3>BizPage</h3>
-                        <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies
-                            darta donna mare fermentum iaculis eu non diam phasellus. Scelerisque felis imperdiet proin fermentum
-                            leo. Amet volutpat consequat mauris nunc congue.</p>
-                    </div>
+                        <div class="col-lg-4 col-md-6 footer-info">
+                            <h3>KingdomTV</h3>
+                            <p>KingdomTV es una aplicación web que nace en la asignatura de DAW de la URJC, como método de aprendizaje
+                                y ante la curiosidad de los alumnos de realizar una aplicación de seguimiento de peliculas
+                                y series.</p>
+                        </div>
 
-                    <div class="col-lg-3 col-md-6 footer-links">
-                        <h4>Useful Links</h4>
-                        <ul>
-                            <li>
-                                <i class="ion-ios-arrow-right"></i>
-                                <a href="#">Home</a>
-                            </li>
-                            <li>
-                                <i class="ion-ios-arrow-right"></i>
-                                <a href="#">About us</a>
-                            </li>
-                            <li>
-                                <i class="ion-ios-arrow-right"></i>
-                                <a href="#">Services</a>
-                            </li>
-                            <li>
-                                <i class="ion-ios-arrow-right"></i>
-                                <a href="#">Terms of service</a>
-                            </li>
-                            <li>
-                                <i class="ion-ios-arrow-right"></i>
-                                <a href="#">Privacy policy</a>
-                            </li>
-                        </ul>
-                    </div>
 
-                    <div class="col-lg-3 col-md-6 footer-contact">
-                        <h4>Contact Us</h4>
-                        <p>
-                            A108 Adam Street
-                            <br> New York, NY 535022
-                            <br> United States
-                            <br>
-                            <strong>Phone:</strong> +1 5589 55488 55
-                            <br>
-                            <strong>Email:</strong> info@example.com
-                            <br>
-                        </p>
+                        <div class="col-lg-4 col-md-6 footer-contact">
+                            <h4>Información de contacto</h4>
+                            <p>
+                                Calle Tulipán, s/n,
+                                <br> 28933 Móstoles, Madrid
+                                <br> España
+                                <br>
+                                <strong>Telefono:</strong> +34 916 65 50 60
+                                <br>
+                                <strong>Email:</strong> info@kindomtv.com
+                                <br>
+                            </p>
 
-                        <div class="social-links">
-                            <a href="#" class="twitter">
-                                <i class="fa fa-twitter"></i>
-                            </a>
-                            <a href="#" class="facebook">
-                                <i class="fa fa-facebook"></i>
-                            </a>
-                            <a href="#" class="instagram">
-                                <i class="fa fa-instagram"></i>
-                            </a>
-                            <a href="#" class="google-plus">
-                                <i class="fa fa-google-plus"></i>
-                            </a>
-                            <a href="#" class="linkedin">
-                                <i class="fa fa-linkedin"></i>
-                            </a>
+                            <div class="social-links">
+                                <a href="#" class="twitter">
+                                    <i class="fa fa-twitter"></i>
+                                </a>
+                                <a href="#" class="facebook">
+                                    <i class="fa fa-facebook"></i>
+                                </a>
+                                <a href="#" class="instagram">
+                                    <i class="fa fa-instagram"></i>
+                                </a>
+                                <a href="#" class="google-plus">
+                                    <i class="fa fa-google-plus"></i>
+                                </a>
+                                <a href="#" class="linkedin">
+                                    <i class="fa fa-linkedin"></i>
+                                </a>
+                            </div>
+
+                        </div>
+
+                        <div class="col-lg-4 col-md-6 footer-newsletter">
+                            <h4>Nuestro equipo de
+                                <br>desarrolladores</h4>
+                            <p>
+                                Jesús Ávila - @SrJesusAM
+                                <br> Miguel Torrijos - @MiguelTG35
+                                <br> Lei Han - @LeiHan1
+                                <br> Sergio Sanchéz - @SergioSV96
+                            </p>
+                            <form action="" method="post">
+                                <input type="email" name="email">
+                                <input type="submit" value="Subscribe">
+                            </form>
                         </div>
 
                     </div>
-
-                    <div class="col-lg-3 col-md-6 footer-newsletter">
-                        <h4>Our Newsletter</h4>
-                        <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna veniam enim veniam illum dolore
-                            legam minim quorum culpa amet magna export quem marada parida nodela caramase seza.</p>
-                        <form action="" method="post">
-                            <input type="email" name="email">
-                            <input type="submit" value="Subscribe">
-                        </form>
-                    </div>
-
                 </div>
             </div>
-        </div>
 
-        <div class="container">
-            <div class="copyright">
-                &copy; Copyright
-                <strong>BizPage</strong>. All Rights Reserved
+            <div class="container">
+                <div class="copyright">
+                    &copy; Copyright
+                    <strong>KingdomTV</strong>. All Rights Reserved
+                </div>
             </div>
-            <div class="credits">
-                <!--
-          All the links in the footer should remain intact.
-          You can delete the links only if you purchased the pro version.
-          Licensing information: https://bootstrapmade.com/license/
-          Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=BizPage
-        -->
-                Best
-                <a href="https://bootstrapmade.com/">Bootstrap Templates</a> by BootstrapMade
-            </div>
-        </div>
-    </footer>
-    <!-- #footer -->
+        </footer>
+        <!-- #footer -->
 
-    <a href="#" class="back-to-top">
-        <i class="fa fa-chevron-up"></i>
-    </a>
+        <a href="#" class="back-to-top">
+            <i class="fa fa-chevron-up"></i>
+        </a>
 
-    <!-- JavaScript Libraries -->
-    <script src="lib/jquery/jquery.min.js"></script>
-    <script src="lib/jquery/jquery-migrate.min.js"></script>
-    <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/superfish/hoverIntent.js"></script>
-    <script src="lib/superfish/superfish.min.js"></script>
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/counterup/counterup.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="lib/isotope/isotope.pkgd.min.js"></script>
-    <script src="lib/lightbox/js/lightbox.min.js"></script>
-    <script src="lib/touchSwipe/jquery.touchSwipe.min.js"></script>
-    <!-- Contact Form JavaScript File -->
-    <script src="contactform/contactform.js"></script>
+        <!-- JavaScript Libraries -->
+        <script src="lib/jquery/jquery.min.js"></script>
+        <script src="lib/jquery/jquery-migrate.min.js"></script>
+        <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/superfish/hoverIntent.js"></script>
+        <script src="lib/superfish/superfish.min.js"></script>
+        <script src="lib/wow/wow.min.js"></script>
+        <script src="lib/waypoints/waypoints.min.js"></script>
+        <script src="lib/counterup/counterup.min.js"></script>
+        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+        <script src="lib/isotope/isotope.pkgd.min.js"></script>
+        <script src="lib/lightbox/js/lightbox.min.js"></script>
+        <script src="lib/touchSwipe/jquery.touchSwipe.min.js"></script>
+        <!-- Contact Form JavaScript File -->
+        <script src="contactform/contactform.js"></script>
 
-    <!-- Template Main Javascript File -->
-    <script src="js/main.js"></script>
+        <!-- SCRIPTS -->
+        <!-- JQuery -->
+        <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+        <!-- Bootstrap tooltips -->
+        <script type="text/javascript" src="js/popper.min.js"></script>
+        <!-- Bootstrap core JavaScript -->
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <!-- MDB core JavaScript -->
+        <script type="text/javascript" src="js/mdb.min.js"></script>
+
+        <!-- Template Main Javascript File -->
+        <script src="js/main.js"></script>
 
 </body>
 

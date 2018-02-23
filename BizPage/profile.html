@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>{{profileName}}</title>
+    <title>Profile - {{profileName}}</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -25,6 +25,17 @@
     <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
     <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
 
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="css/mdb.min.css" rel="stylesheet">
+
     <!-- Main Stylesheet File -->
     <link href="css/style.css" rel="stylesheet">
     <link href="css/profile.css" rel="stylesheet">
@@ -43,36 +54,36 @@
     <!--==========================
     Header
   ============================-->
-    <header id="header" class="header-scrolled"> 
+    <header id="header" class="header-scrolled">
         <div class="container-fluid">
 
             <div id="logo" class="pull-left">
-                <h1>
-                    <a href="#intro" class="scrollto">KingdomTV</a>
-                </h1>
+                <!-- <h1><a href="#intro" class="scrollto">KingdomTV</a></h1>-->
                 <!-- Uncomment below if you prefer to use an image logo -->
-                <a href="#intro"><img src="img/logo.png" alt="" title="" /></a>
+                <a href="index.html">
+                    <img src="img/logo/logo.png" alt="" title="" />
+                </a>
             </div>
 
             <nav id="nav-menu-container">
                 <ul class="nav-menu">
                     <li>
-                        <a href="/inicio">Inicio</a>
+                        <a href="index.html">Inicio</a>
                     </li>
                     <li>
-                        <a href="/peliculas">Peliculas</a>
+                        <a href="movies.html">Peliculas</a>
                     </li>
                     <li>
-                        <a href="/series">Series</a>
+                        <a href="series.html">Series</a>
                     </li>
                     <li>
-                        <a href="/contacto">Contacto</a>
+                        <a href="contact.html">Contacto</a>
                     </li>
-                    <li class="menu-has-children">
-                        <a href="">{{profileName}}</a>
+                    <li class="menu-active" class="menu-has-children">
+                        <a href="login.html">{{profileName}}</a>
                         <ul>
                             <li>
-                                <a href="#">Perfil</a>
+                                <a href="profile.html">Perfil</a>
                             </li>
                             <li>
                                 <a href="#">Configuración</a>
@@ -95,33 +106,102 @@
       Profile Section
     ============================-->
         <section id="about">
+
             <div class="container">
-
-                <header class="section-header">
-                    <h3>{{profileName}}</h3>
-                    <p>Información sobre el usario, descripcion de si mismo</p>
-                </header>
-
-                <div class="row about-cols">
-
-                    <div class="col-md-4 wow fadeInUp">
-                        <div class="about-col">
-                            <div class="img">
-                                <img src="{{imgProfileBackground}}" alt="" class="img-fluid">                                
+                <div class="card text-center">
+                    <div class="card-header secondary-color white-text">
+                        {{profileName}}
+                    </div>
+                    <h2></h2>
+                    <div class="card-body">
+                        <div class="row justify-content-md-center">
+                            <h5>Presentacion del perfil de la persona</h5>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="card">
+                                    <div class="card-header green lighten-1 white-text">Featured</div>
+                                    <div class="card-body">
+                                        <h4 class="card-title"></h4>
+                                        <div class="row">
+                                            <div class="col text-center">
+                                                <img src="https://mdbootstrap.com/img/Photos/Avatars/img(31).jpg" class="img-fluid z-depth-1 rounded-circle" alt="Responsive image"
+                                                    width="128px" heigth="128px">
+                                            </div>
+                                        </div>
+                                        <p></p>
+                                        <a class="btn btn-green">Cambiar imagen</a>
+                                    </div>
+                                </div>
                             </div>
-                            <h2 class="title">
-                                <a href="#">{{profileName}}</a>
-                            </h2>
-                            <p>
-                                {{profileDescription}}
-                            </p>
+                            <div class="col">
+                                <div class="card">
+                                    <div class="card-header blue lighten-1 white-text">Gustos</div>
+                                    <div class="card-body">
+                                        <h4 class="card-title">Peliculas</h4>
+
+                                        <ul class="list-group">
+                                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                Cras justo odio
+                                                <span class="badge badge-primary badge-pill">14</span>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                Dapibus ac facilisis in
+                                                <span class="badge badge-primary badge-pill">2</span>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                Morbi leo risus
+                                                <span class="badge badge-primary badge-pill">1</span>
+                                            </li>
+                                        </ul>
+                                        <p></p>
+                                        <a class="btn btn-blue" id="btnChangeFilms">Elegir géneros</a>
+                                    </div>
+                                    <div class="card-body">
+                                        <h4 class="card-title">Series</h4>
+
+                                        <ul class="list-group">
+                                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                Cras justo odio
+                                                <span class="badge badge-primary badge-pill">14</span>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                Dapibus ac facilisis in
+                                                <span class="badge badge-primary badge-pill">2</span>
+                                            </li>
+                                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                Morbi leo risus
+                                                <span class="badge badge-primary badge-pill">1</span>
+                                            </li>
+                                        </ul>
+                                        <p></p>
+                                        <a class="btn btn-blue">Elegir géneros</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card">
+                                    <div class="card-header red lighten-1 white-text">Opciones</div>
+                                    <div class="card-body">
+                                        <h4 class="card-title">Cuenta</h4>
+                                        <ul class="list-group">
+                                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                                Contraseña
+                                                <a class="btn btn-red btn-sm">Cambiar</a>
+                                            </li>
+                                        </ul>
+                                        <p></p>
+                                        <a class="btn btn-red">Eliminar</a>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
-
             </div>
+
         </section>
-        <!-- #about -->
     </main>
 
     <!--==========================
@@ -132,49 +212,25 @@
             <div class="container">
                 <div class="row">
 
-                    <div class="col-lg-3 col-md-6 footer-info">
-                        <h3>BizPage</h3>
-                        <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies
-                            darta donna mare fermentum iaculis eu non diam phasellus. Scelerisque felis imperdiet proin fermentum
-                            leo. Amet volutpat consequat mauris nunc congue.</p>
+                    <div class="col-lg-4 col-md-6 footer-info">
+                        <h3>KingdomTV</h3>
+                        <p>KingdomTV es una aplicación web que nace en la asignatura de DAW de la URJC, como método de aprendizaje
+                            y ante la curiosidad de los alumnos de realizar una aplicación de seguimiento de peliculas y
+                            series.
+                        </p>
                     </div>
 
-                    <div class="col-lg-3 col-md-6 footer-links">
-                        <h4>Useful Links</h4>
-                        <ul>
-                            <li>
-                                <i class="ion-ios-arrow-right"></i>
-                                <a href="#">Home</a>
-                            </li>
-                            <li>
-                                <i class="ion-ios-arrow-right"></i>
-                                <a href="#">About us</a>
-                            </li>
-                            <li>
-                                <i class="ion-ios-arrow-right"></i>
-                                <a href="#">Services</a>
-                            </li>
-                            <li>
-                                <i class="ion-ios-arrow-right"></i>
-                                <a href="#">Terms of service</a>
-                            </li>
-                            <li>
-                                <i class="ion-ios-arrow-right"></i>
-                                <a href="#">Privacy policy</a>
-                            </li>
-                        </ul>
-                    </div>
 
-                    <div class="col-lg-3 col-md-6 footer-contact">
-                        <h4>Contact Us</h4>
+                    <div class="col-lg-4 col-md-6 footer-contact">
+                        <h4>Información de contacto</h4>
                         <p>
-                            A108 Adam Street
-                            <br> New York, NY 535022
-                            <br> United States
+                            Calle Tulipán, s/n,
+                            <br> 28933 Móstoles, Madrid
+                            <br> España
                             <br>
-                            <strong>Phone:</strong> +1 5589 55488 55
+                            <strong>Telefono:</strong> +34 916 65 50 60
                             <br>
-                            <strong>Email:</strong> info@example.com
+                            <strong>Email:</strong> info@kindomtv.com
                             <br>
                         </p>
 
@@ -198,10 +254,15 @@
 
                     </div>
 
-                    <div class="col-lg-3 col-md-6 footer-newsletter">
-                        <h4>Our Newsletter</h4>
-                        <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna veniam enim veniam illum dolore
-                            legam minim quorum culpa amet magna export quem marada parida nodela caramase seza.</p>
+                    <div class="col-lg-4 col-md-6 footer-newsletter">
+                        <h4>Nuestro equipo de
+                            <br>desarrolladores</h4>
+                        <p>
+                            Jesús Ávila - @SrJesusAM
+                            <br> Miguel Torrijos - @MiguelTG35
+                            <br> Lei Han - @LeiHan1
+                            <br> Sergio Sanchéz - @SergioSV96
+                        </p>
                         <form action="" method="post">
                             <input type="email" name="email">
                             <input type="submit" value="Subscribe">
@@ -215,17 +276,7 @@
         <div class="container">
             <div class="copyright">
                 &copy; Copyright
-                <strong>BizPage</strong>. All Rights Reserved
-            </div>
-            <div class="credits">
-                <!--
-          All the links in the footer should remain intact.
-          You can delete the links only if you purchased the pro version.
-          Licensing information: https://bootstrapmade.com/license/
-          Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=BizPage
-        -->
-                Best
-                <a href="https://bootstrapmade.com/">Bootstrap Templates</a> by BootstrapMade
+                <strong>KingdomTV</strong>. All Rights Reserved
             </div>
         </div>
     </footer>
@@ -253,8 +304,18 @@
     <script src="contactform/contactform.js"></script>
 
     <!-- Template Main Javascript File -->
-    <script src="js/main.js"></script>
+    <!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
 
+    <script src="js/main.js"></script>
+    <script src="js/profilejs"></script>
 </body>
 
 </html>

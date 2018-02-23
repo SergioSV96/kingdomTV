@@ -2,259 +2,275 @@
 <html lang="en">
 
 <head>
+
   <meta charset="utf-8">
-  <title>{{profileName}}</title>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <meta content="" name="keywords">
-  <meta content="" name="description">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
 
-  <!-- Favicons -->
-  <link href="img/favicon.png" rel="icon">
-  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+  <title>Kingdom TV</title>
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Bootstrap CSS File -->
-  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom fonts for this template -->
+  <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-  <!-- Libraries CSS Files -->
-  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-  <link href="lib/animate/animate.min.css" rel="stylesheet">
-  <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
-  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-  <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
-
-  <!-- Main Stylesheet File -->
-  <link href="css/style.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="css/agency.min.css" rel="stylesheet">
+  <link href="css/mdb.min.css" rel="stylesheet">
+  <!-- Custom styles for this template -->
   <link href="css/profile.css" rel="stylesheet">
-
-  <!-- =======================================================
-  Theme Name: BizPage
-  Theme URL: https://bootstrapmade.com/bizpage-bootstrap-business-template/
-  Author: BootstrapMade.com
-  License: https://bootstrapmade.com/license/
-======================================================= -->
 </head>
 
-<body>
-<div id="preloader"></div>
+<body id="page-top">
 
-<!--==========================
-Header
-============================-->
-<header id="header" class="header-scrolled">
-  <div class="container-fluid">
-
-    <div id="logo" class="pull-left">
-      <h1>
-        <a href="#intro" class="scrollto">KingdomTV</a>
-      </h1>
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <a href="#intro"><img src="img/logo.png" alt="" title="" /></a>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top navbar-shrink" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="/">Kingdom TV</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fa fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav text-uppercase ml-auto">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="/">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="/peliculas">Peliculas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="/series">Series</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="/contacto">Contacto</a>
+          </li>
+        </ul>
+      </div>
     </div>
+  </nav>
 
-    <nav id="nav-menu-container">
-      <ul class="nav-menu">
-        <li>
-          <a href="/inicio">Inicio</a>
-        </li>
-        <li>
-          <a href="/peliculas">Peliculas</a>
-        </li>
-        <li>
-          <a href="/series">Series</a>
-        </li>
-        <li>
-          <a href="/contacto">Contacto</a>
-        </li>
-        <li class="menu-has-children">
-          <a href="">{{profileName}}</a>
-          <ul>
-            <li>
-              <a href="#">Perfil</a>
+  <section>
+    <div class="row justify-content-center" id="sectionProfile">
+      <div class="col-md-8 col-lg-8">
+        <div class="card">
+          <!-- Nav tabs -->
+          <ul class="nav nav-tabs nav-justified blue" role="tablist">
+            <li class="nav-item">
+              <b class="nav-link active" data-toggle="tab" href="#panel5" role="tab">
+                <i class="fa fa-user"></i> Información personal</b>
             </li>
-            <li>
-              <a href="#">Configuración</a>
+            <li class="nav-item">
+              <b class="nav-link" data-toggle="tab" href="#panel6" role="tab">
+                <i class="fa fa-heart"></i> Géneros favoritos</b>
             </li>
-            <li>
-              <a href="#">Cerrar sesión</a>
+            <li class="nav-item">
+              <b class="nav-link" data-toggle="tab" href="#panel7" role="tab">
+                <i class="fa fa-envelope"></i> Mensajes</b>
             </li>
           </ul>
-        </li>
-      </ul>
-    </nav>
-    <!-- #nav-menu-container -->
-  </div>
-</header>
-<!-- #header -->
+          <!-- Tab panels -->
+          <div class="tab-content">
+            <!--Panel 1-->
+            <div class="tab-pane fade in show active" id="panel5" role="tabpanel">
+              <!--Card Wider-->
+              <div class="card card-cascade wider">
 
-<main id="main">
+                <!--Card image-->
+                <div class="row justify-content-center">
+                  <div class="view overlay hm-white-slight" id="imgProfile">
+                    <img src="https://mdbootstrap.com/img/Photos/Horizontal/People/6-col/img%20%283%29.jpg" class="img-fluid">
+                    <a href="#!">
+                      <div class="mask"></div>
+                    </a>
+                  </div>
+                </div>
+                <!--/Card image-->
 
-  <!--==========================
-Profile Section
-============================-->
-  <section id="about">
-    <div class="container">
+                <!--Card content-->
+                <div class="card-body text-center">
+                  <!--Title-->
+                  <h4 class="card-title">
+                    <strong>Miguel Torrijos</strong>
+                  </h4>
+                  <h5 class="blue-text">
+                    <strong>Aficionado a las comedias</strong>
+                  </h5>
 
-      <header class="section-header">
-        <h3>{{profileName}}</h3>
-        <p>{{profileDescription}}</p>
-      </header>
+                  <p class="card-text">你好, Hola, Hello.</p>
 
-      <div class="row about-cols">
 
-        <div class="col-md-4 wow fadeInUp">
-          <div class="about-col">
-            <div class="img">
-              <img src="{{imgProfileBackground}}" alt="" class="img-fluid">
+                  <!--Google-->
+                  <a class="icons-sm li-ic">
+                    <i class="fa fa-google"> </i>
+                  </a>
+                  <!--Twitter-->
+                  <a class="icons-sm tw-ic">
+                    <i class="fa fa-twitter"> </i>
+                  </a>
+                  <!--Facebook-->
+                  <a class="icons-sm fb-ic">
+                    <i class="fa fa-facebook"> </i>
+                  </a>
+
+                </div>
+                <!--/.Card content-->
+
+              </div>
+              <!--/.Card Wider-->
             </div>
-            <h2 class="title">
-              <a href="#">{{profileName}}</a>
-            </h2>
-            <p>
-              {{profileDescription}}
-            </p>
-          </div>
-        </div>
-      </div>
+            <!--/.Panel 1-->
+            <!--Panel 2-->
+            <div class="tab-pane fade" id="panel6" role="tabpanel">
+              <!-- Lista de los géneros favoritos y el numero de veces que ha visto-->
+              <div class="card">
+                <div class="card-body text-center">
+                  <!--Title-->
+                  <h4 class="card-title">
+                    <strong>Veces visto</strong>
+                  </h4>
+                  <ul class="list-group">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                      Terror
+                      <span class="badge badge-green badge-pill">14</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                      Comedias
+                      <span class="badge badge-green badge-pill">2</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                      Drama
+                      <span class="badge badge-green badge-pill">1</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!--/.Panel 2-->
+            <!--Panel 3-->
+            <div class="tab-pane fade" id="panel7" role="tabpanel">
+              <div class="card">
+                <div class="card-body text-center">
+                  <a class="media-left waves-light">
+                    <img class="rounded-circle" src="https://mdbootstrap.com/img/Photos/Avatars/avatar-13.jpg" alt="Generic placeholder image">
+                  </a>
+                  <div class="media-body">
+                    <h4 class="media-heading">Avatar</h4>
+                    <div class="row justify-content-center">
+                      <ul class="rating inline-ul">
+                        <li>
+                          <i class="fa fa-star amber-text"></i>
+                        </li>
+                        <li>
+                          <i class="fa fa-star amber-text"></i>
+                        </li>
+                        <li>
+                          <i class="fa fa-star amber-text"></i>
+                        </li>
+                        <li>
+                          <i class="fa fa-star"></i>
+                        </li>
+                        <li>
+                          <i class="fa fa-star"></i>
+                        </li>
+                      </ul>
+                    </div>
+                    <p>La pelicula ha sido un aburrimiento me he dormido nada mas emprezar</p>
+                  </div>
+                </div>
+              </div>
+            </div>
 
+          </div>
+          <!--/.Panel 3-->
+        </div>
+
+      </div>
+    </div>
     </div>
   </section>
-  <!-- #about -->
-</main>
 
-<!--==========================
-Footer
-============================-->
-<footer id="footer">
-  <div class="footer-top">
+  <!-- Footer -->
+  <footer>
     <div class="container">
       <div class="row">
-
-        <div class="col-lg-3 col-md-6 footer-info">
-          <h3>BizPage</h3>
-          <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies
-            darta donna mare fermentum iaculis eu non diam phasellus. Scelerisque felis imperdiet proin fermentum
-            leo. Amet volutpat consequat mauris nunc congue.</p>
+        <div class="col-md-4">
+          <span class="copyright">Copyright © Kingdom TV 2018</span>
         </div>
-
-        <div class="col-lg-3 col-md-6 footer-links">
-          <h4>Useful Links</h4>
-          <ul>
-            <li>
-              <i class="ion-ios-arrow-right"></i>
-              <a href="#">Home</a>
+        <div class="col-md-4">
+          <ul class="list-inline social-buttons">
+            <li class="list-inline-item">
+              <a href="#">
+                <i class="fa fa-twitter"></i>
+              </a>
             </li>
-            <li>
-              <i class="ion-ios-arrow-right"></i>
-              <a href="#">About us</a>
+            <li class="list-inline-item">
+              <a href="#">
+                <i class="fa fa-facebook"></i>
+              </a>
             </li>
-            <li>
-              <i class="ion-ios-arrow-right"></i>
-              <a href="#">Services</a>
+            <li class="list-inline-item">
+              <a href="#">
+                <i class="fa fa-google"></i>
+              </a>
             </li>
-            <li>
-              <i class="ion-ios-arrow-right"></i>
-              <a href="#">Terms of service</a>
-            </li>
-            <li>
-              <i class="ion-ios-arrow-right"></i>
-              <a href="#">Privacy policy</a>
+            <li class="list-inline-item">
+              <a href="#">
+                <i class="fa fa-linkedin"></i>
+              </a>
             </li>
           </ul>
         </div>
-
-        <div class="col-lg-3 col-md-6 footer-contact">
-          <h4>Contact Us</h4>
-          <p>
-            A108 Adam Street
-            <br> New York, NY 535022
-            <br> United States
-            <br>
-            <strong>Phone:</strong> +1 5589 55488 55
-            <br>
-            <strong>Email:</strong> info@example.com
-            <br>
-          </p>
-
-          <div class="social-links">
-            <a href="#" class="twitter">
-              <i class="fa fa-twitter"></i>
-            </a>
-            <a href="#" class="facebook">
-              <i class="fa fa-facebook"></i>
-            </a>
-            <a href="#" class="instagram">
-              <i class="fa fa-instagram"></i>
-            </a>
-            <a href="#" class="google-plus">
-              <i class="fa fa-google-plus"></i>
-            </a>
-            <a href="#" class="linkedin">
-              <i class="fa fa-linkedin"></i>
-            </a>
-          </div>
-
+        <div class="col-md-4">
+          <ul class="list-inline quicklinks">
+            <li class="list-inline-item">
+              <a href="/about">Sobre nosotros</a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#">Política de privacidad</a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#">Términos de uso</a>
+            </li>
+          </ul>
         </div>
-
-        <div class="col-lg-3 col-md-6 footer-newsletter">
-          <h4>Our Newsletter</h4>
-          <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna veniam enim veniam illum dolore
-            legam minim quorum culpa amet magna export quem marada parida nodela caramase seza.</p>
-          <form action="" method="post">
-            <input type="email" name="email">
-            <input type="submit" value="Subscribe">
-          </form>
-        </div>
-
       </div>
     </div>
-  </div>
+  </footer>
 
-  <div class="container">
-    <div class="copyright">
-      &copy; Copyright
-      <strong>BizPage</strong>. All Rights Reserved
-    </div>
-    <div class="credits">
-      <!--
-All the links in the footer should remain intact.
-You can delete the links only if you purchased the pro version.
-Licensing information: https://bootstrapmade.com/license/
-Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=BizPage
--->
-      Best
-      <a href="https://bootstrapmade.com/">Bootstrap Templates</a> by BootstrapMade
-    </div>
-  </div>
-</footer>
-<!-- #footer -->
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-<a href="#" class="back-to-top">
-  <i class="fa fa-chevron-up"></i>
-</a>
+  <!-- Plugin JavaScript -->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-<!-- JavaScript Libraries -->
-<script src="lib/jquery/jquery.min.js"></script>
-<script src="lib/jquery/jquery-migrate.min.js"></script>
-<script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="lib/easing/easing.min.js"></script>
-<script src="lib/superfish/hoverIntent.js"></script>
-<script src="lib/superfish/superfish.min.js"></script>
-<script src="lib/wow/wow.min.js"></script>
-<script src="lib/waypoints/waypoints.min.js"></script>
-<script src="lib/counterup/counterup.min.js"></script>
-<script src="lib/owlcarousel/owl.carousel.min.js"></script>
-<script src="lib/isotope/isotope.pkgd.min.js"></script>
-<script src="lib/lightbox/js/lightbox.min.js"></script>
-<script src="lib/touchSwipe/jquery.touchSwipe.min.js"></script>
-<!-- Contact Form JavaScript File -->
-<script src="contactform/contactform.js"></script>
+  <!-- Contact form JavaScript -->
+  <script src="js/jqBootstrapValidation.js"></script>
+  <script src="js/contact_me.js"></script>
 
-<!-- Template Main Javascript File -->
-<script src="js/main.js"></script>
+  <!-- Custom scripts for this template -->
+  <script src="js/agency.min.js"></script>
+  <script src="js/profile.js"></script>
 
+  <!-- SCRIPTS -->
+  <!-- JQuery -->
+  <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="js/mdb.min.js"></script>
 </body>
 
 </html>
