@@ -94,7 +94,7 @@ public class ApiParser
     {
         try
         {
-            JSONObject jo = ReadJsonFromUrl("https://api.themoviedb.org/3/serie/" + id + "?api_key=c16e8d049b0c5c16b9f10f731876549b");
+            JSONObject jo = ReadJsonFromUrl("https://api.themoviedb.org/3/tv/" + id + "?api_key=c16e8d049b0c5c16b9f10f731876549b");
             Serie serie = new Serie(jo.getLong("id"), jo.getString("original_title"),
                     null, jo.getString("overview"), jo.getString("release_date"),
                     "https://image.tmdb.org/t/p/w500" + jo.getString("poster_path"), null);
@@ -111,7 +111,7 @@ public class ApiParser
     {
         try
         {
-            JSONObject query = ReadJsonFromUrl("https://api.themoviedb.org/3/search/serie?api_key=c16e8d049b0c5c16b9f10f731876549b&query=" + search.trim().replace(" ", "+"));
+            JSONObject query = ReadJsonFromUrl("https://api.themoviedb.org/3/search/tv?api_key=c16e8d049b0c5c16b9f10f731876549b&query=" + search.trim().replace(" ", "+"));
 
             JSONArray jsonArray = query.getJSONArray("results");
 
