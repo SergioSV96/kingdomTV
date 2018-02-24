@@ -567,7 +567,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 /* Section with background
 --------------------------------*/
 .section-bg {
-  background: #f7f7f7;
+  background: #e0dfdf;
 }
 
 /* Featured Services Section
@@ -615,7 +615,8 @@ body.mobile-nav-active #mobile-nav-toggle {
 /* About Us Section
 --------------------------------*/
 #about {
-  background: #E5E5E5;
+  background: #f7f7f7;
+  /*background: url("../img/about-bg.jpg") center top no-repeat fixed;*/
   background-size: cover;
   padding: 60px 0 40px 0;
   position: relative;
@@ -1475,3 +1476,19 @@ body.mobile-nav-active #mobile-nav-toggle {
   font-size: 13px;
   color: #ddd;
 }
+
+/* Movie Info section*/
+
+.movie-section {
+  background:rgb(184, 184, 184)
+} 
+
+.reviews {
+    margin: 20px;
+}
+
+.rounded-circle {
+    width: 90px;
+    height: 90px;
+}
+
