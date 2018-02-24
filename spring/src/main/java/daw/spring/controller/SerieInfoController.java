@@ -6,10 +6,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class SerieInfoController
 {
-	@RequestMapping("/infoserie")
+	@RequestMapping("/seriesInfo")
     public String FilmInfoHTML(){
 
-        return "infoserie";
+        return "seriesInfo";
     }
 
 	
