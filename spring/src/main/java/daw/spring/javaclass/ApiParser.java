@@ -40,7 +40,7 @@ public class ApiParser
         try
         {
             JSONObject jo = ReadJsonFromUrl("https://api.themoviedb.org/3/movie/" + id + "?api_key=c16e8d049b0c5c16b9f10f731876549b");
-            Movie movie = new Movie(jo.getLong("id"), jo.getString("original_title"),
+            Movie movie = new Movie(jo.getLong("id"), jo.getString("name"),
                     null, jo.getString("overview"), jo.getString("release_date"),
                     "https://image.tmdb.org/t/p/w500" + jo.getString("poster_path"), null);
             return movie;
@@ -95,7 +95,7 @@ public class ApiParser
         try
         {
             JSONObject jo = ReadJsonFromUrl("https://api.themoviedb.org/3/tv/" + id + "?api_key=c16e8d049b0c5c16b9f10f731876549b");
-            Serie serie = new Serie(jo.getLong("id"), jo.getString("original_title"),
+            Serie serie = new Serie(jo.getLong("id"), jo.getString("name"),
                     null, jo.getString("overview"), jo.getString("release_date"),
                     "https://image.tmdb.org/t/p/w500" + jo.getString("poster_path"), null);
             return serie;
@@ -127,9 +127,16 @@ public class ApiParser
             List<Serie> list = new ArrayList<Serie>();
             for (int i = 0; i < arrayList.size(); i++)
             {
-                Serie serie = new Serie (arrayList.get(i).getLong("id"), arrayList.get(i).getString("original_title"),
-                        genresFakes, arrayList.get(i).getString("overview"), arrayList.get(i).getString("release_date"),
-                        "https://image.tmdb.org/t/p/w500" + arrayList.get(i).getString("poster_path"), null);
+                String imgPath;
+                try
+                {
+                  imgPath =  arrayList.get(i).getString("poster_path");
+                }
+                catch (Exception ex) { imgPath = "";}
+
+                Serie serie = new Serie (arrayList.get(i).getLong("id"), arrayList.get(i).getString("name"),
+                        genresFakes, arrayList.get(i).getString("overview"), arrayList.get(i).getString("first_air_date"),
+                        "https://image.tmdb.org/t/p/w500" + imgPath, null);
 
                 list.add(serie);
             }

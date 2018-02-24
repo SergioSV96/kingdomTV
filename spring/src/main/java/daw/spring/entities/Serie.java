@@ -31,8 +31,8 @@ public class Serie {
     private String poster;
 
     //Comment about the serie from an user
-    @OneToMany(mappedBy="movie")
-    private List<Comment> comments;
+    //@OneToMany(mappedBy="serie")
+   // private List<Comment> comments;
 
 
     //Constructor needed to load from the database
@@ -109,12 +109,12 @@ public class Serie {
 		this.poster = poster;
 	}
 
-	public List<Comment> getComments() {
+	/*public List<Comment> getComments() {
 		return comments;
-	}
+	}*/
 
-	public void setComments(List<Comment> comments) {
+	/*public void setComments(List<Comment> comments) {
 		this.comments = comments;
-	}    
+	} */
 	
 }

@@ -29,9 +29,9 @@ public class SeriesController
 
         model.addAttribute("profileName","Prueba de KingomTV");
 
-        List<Serie> sf = new ApiParser().SearchSeries("Designated");
+        List<Serie> ss = new ApiParser().SearchSeries("Lost");
 
-        model.addAttribute("recommendedSeries", sf);
+        model.addAttribute("recommendedSeries", ss);
 
         return "series";
     }
