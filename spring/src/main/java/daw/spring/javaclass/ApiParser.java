@@ -11,6 +11,7 @@ import java.util.List;
 
 import daw.spring.entities.Genre;
 import daw.spring.entities.Movie;
+import daw.spring.entities.Serie;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -88,4 +89,58 @@ public class ApiParser
         return null;
     }
 
+    //Search the Serie with the API. Needs the id known.
+    public Serie SearchOneSerieTMDB(String id)
+    {
+        try
+        {
+            JSONObject jo = ReadJsonFromUrl("https://api.themoviedb.org/3/serie/" + id + "?api_key=c16e8d049b0c5c16b9f10f731876549b");
+            Serie serie = new Serie(jo.getLong("id"), jo.getString("original_title"),
+                    null, jo.getString("overview"), jo.getString("release_date"),
+                    "https://image.tmdb.org/t/p/w500" + jo.getString("poster_path"), null);
+            return serie;
+        }
+        catch (IOException exIO)
+        {
+
+        }
+        return null;
+    }
+
+    public List<Serie> SearchSeries(String search)
+    {
+        try
+        {
+            JSONObject query = ReadJsonFromUrl("https://api.themoviedb.org/3/search/serie?api_key=c16e8d049b0c5c16b9f10f731876549b&query=" + search.trim().replace(" ", "+"));
+
+            JSONArray jsonArray = query.getJSONArray("results");
+
+            ArrayList<Genre> genresFakes = new ArrayList<Genre>();
+            genresFakes.add(new Genre("Drama"));
+
+            ArrayList<JSONObject> arrayList = new ArrayList(jsonArray.length());
+            for (int i = 0; i < jsonArray.length(); i++)
+            {
+                arrayList.add(jsonArray.getJSONObject(i));
+            }
+
+            List<Serie> list = new ArrayList<Serie>();
+            for (int i = 0; i < arrayList.size(); i++)
+            {
+                Serie serie = new Serie (arrayList.get(i).getLong("id"), arrayList.get(i).getString("original_title"),
+                        genresFakes, arrayList.get(i).getString("overview"), arrayList.get(i).getString("release_date"),
+                        "https://image.tmdb.org/t/p/w500" + arrayList.get(i).getString("poster_path"), null);
+
+                list.add(serie);
+            }
+
+            return list;
+        }
+        catch (IOException exIO)
+        {
+
+        }
+
+        return null;
+    }
 }

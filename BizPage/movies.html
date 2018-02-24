@@ -13,7 +13,8 @@
     <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700"
+          rel="stylesheet">
 
     <!-- Bootstrap CSS File -->
     <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -47,264 +48,263 @@
 </head>
 
 <body>
-    <div id="preloader"></div>
+<div id="preloader"></div>
+
+<!--==========================
+Header
+============================-->
+<header id="header" class="header-scrolled">
+    <div class="container-fluid">
+
+        <div id="logo" class="pull-left">
+            <!-- <h1><a href="#intro" class="scrollto">KingdomTV</a></h1>-->
+            <!-- Uncomment below if you prefer to use an image logo -->
+            <a href="index.html">
+                <img src="img/logo/logo.png" alt="" title=""/>
+            </a>
+        </div>
+
+        <nav id="nav-menu-container">
+            <ul class="nav-menu">
+                <li>
+                    <a href="index.html">Inicio</a>
+                </li>
+                <li class="menu-active">
+                    <a href="movies.html">Peliculas</a>
+                </li>
+                <li>
+                    <a href="series.html">Series</a>
+                </li>
+                <li>
+                    <a href="contact.html">Contacto</a>
+                </li>
+                <li class="menu-has-children">
+                    <a href="profile.html">profileName</a>
+                    <ul>
+                        <li>
+                            <a href="#">Perfil</a>
+                        </li>
+                        <li>
+                            <a href="#">Configuración</a>
+                        </li>
+                        <li>
+                            <a href="#">Cerrar sesión</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <!-- #nav-menu-container -->
+    </div>
+</header>
+<!-- #header -->
+
+<main id="main">
+    <!--==========================
+  Profile Section
+============================-->
+    <section id="contact" class="section-bg wow fadeInUp">
+        <div class="container">
+
+            <div class="section-header">
+                <h3>Peliculas</h3>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="align-content-sm-center">
+            <div class="container">
+                <div class="sw">
+                    <form>
+                        <input type="search" class="search" placeholder="Buscar..."/>
+                        <button class="go">
+                            <span class="entypo-search"></span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!--==========================
-    Header
-  ============================-->
-    <header id="header" class="header-scrolled">
-        <div class="container-fluid">
-
-            <div id="logo" class="pull-left">
-                <!-- <h1><a href="#intro" class="scrollto">KingdomTV</a></h1>-->
-                <!-- Uncomment below if you prefer to use an image logo -->
-                <a href="index.html">
-                    <img src="img/logo/logo.png" alt="" title="" />
-                </a>
-            </div>
-
-            <nav id="nav-menu-container">
-                <ul class="nav-menu">
-                    <li>
-                        <a href="index.html">Inicio</a>
-                    </li>
-                    <li class="menu-active">
-                        <a href="movies.html">Peliculas</a>
-                    </li>
-                    <li>
-                        <a href="series.html">Series</a>
-                    </li>
-                    <li>
-                        <a href="contact.html">Contacto</a>
-                    </li>
-                    <li class="menu-has-children">
-                        <a href="profile.html">{{profileName}}</a>
-                        <ul>
-                            <li>
-                                <a href="#">Perfil</a>
-                            </li>
-                            <li>
-                                <a href="#">Configuración</a>
-                            </li>
-                            <li>
-                                <a href="#">Cerrar sesión</a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
-            <!-- #nav-menu-container -->
-        </div>
-    </header>
-    <!-- #header -->
-
-    <main id="main">
-        <!--==========================
-      Profile Section
-    ============================-->
-        <section id="about">
-            <div class="container">
-                <header class="section-header">
-                    <h3>Peliculas</h3>
-                    <p>Slogan</p>
-                </header>
-
-            </div>
-        </section>
-
-        <section>
-            <div class="align-content-sm-center">
-                <div class="container">
-                    <div class="sw">
-                        <form>
-                            <input type="search" class="search" placeholder="Buscar..." />
-                            <button class="go">
-                                <span class="entypo-search"></span>
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!--==========================
-      Portfolio Section
-    ============================-->
-        <section id="portfolio" class="section-bg">
-            <div class="container">
-
-                <header class="section-header">
-                    <h3 class="section-title">Nuestras recomendaciones</h3>
-                </header>
-
-                <div class="row">
-                    <div class="col-lg-12">
-                        <ul id="portfolio-flters">
-                            <li data-filter="*" class="filter-active">Todos</li>
-                            <li data-filter=".filter-genre1">Más vistas</li>
-                            <li data-filter=".filter-genre2">Mejor valoradas</li>
-                            <li data-filter=".filter-genre3">Más premiadas</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="row portfolio-container">
-                        {{#each blogs}}
-                    <div class="col-lg-4 col-md-6 portfolio-item filter-genre3 wow fadeInUp" data-wow-delay="0.2s">
-                        <div class="portfolio-wrap">
-                            <figure>
-                                <img src="{{FilmImg}}" class="img-fluid" alt="">
-                            </figure>
-
-                            <div class="portfolio-info">
-                                <h4>
-                                    <a href="#">{{FilmTitle}}</a>
-                                </h4>
-                                <p>{{FilmDate}}</p>
-                            </div>
-                        </div>
-                    </div>
-                    {{/each}}
-                </div>
-
-            </div>
-            <div class="text-center moreContentButton">
-                <i class="fa fa-plus-circle fa-3x fa-fw" id="moreContent"></i>
-            </div>
-            </div>
+  Portfolio Section
+============================-->
+    <section id="portfolio" class="section-bg">
+        <div class="container">
 
             <header class="section-header">
-                <h3 class="section-title">Últimas peliculas</h3>
+                <h3 class="section-title">Nuestras recomendaciones</h3>
             </header>
 
             <div class="row">
                 <div class="col-lg-12">
                     <ul id="portfolio-flters">
                         <li data-filter="*" class="filter-active">Todos</li>
-                        <li data-filter=".filter-genre1">Drama</li>
-                        <li data-filter=".filter-genre2">Acción</li>
-                        <li data-filter=".filter-genre3">Terror</li>
-                        <li data-filter=".filter-genre4">Aventuras</li>
-                        <li data-filter=".filter-genre5">Comedia</li>
-                        <li data-filter=".filter-genre6">Historica</li>
+                        <li data-filter=".filter-genre1">Más vistas</li>
+                        <li data-filter=".filter-genre2">Mejor valoradas</li>
+                        <li data-filter=".filter-genre3">Más premiadas</li>
                     </ul>
                 </div>
             </div>
 
-        </section>
-        <!-- #portfolio -->
+            <div class="row portfolio-container">
+                {{#recommendedFilms}}
+                <div class="col-lg-4 col-md-6 portfolio-item genre1 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="portfolio-wrap">
+                        <figure>
+                            <img src="{{poster}}" class="img-fluid" alt="">
+                        </figure>
 
-
-        <!--==========================
-    Footer
-  ============================-->
-        <footer id="footer">
-            <div class="footer-top">
-                <div class="container">
-                    <div class="row">
-
-                        <div class="col-lg-4 col-md-6 footer-info">
-                            <h3>KingdomTV</h3>
-                            <p>KingdomTV es una aplicación web que nace en la asignatura de DAW de la URJC, como método de aprendizaje
-                                y ante la curiosidad de los alumnos de realizar una aplicación de seguimiento de peliculas
-                                y series.</p>
+                        <div class="portfolio-info">
+                            <h4>
+                                <a href="#">{{title}}</a>
+                            </h4>
+                            <p>{{releaseDate}}</p>
                         </div>
+                    </div>
+                </div>
+                {{/recommendedFilms}}
+            </div>
+
+        </div>
+        <div class="text-center moreContentButton">
+            <i class="fa fa-plus-circle fa-3x fa-fw" id="moreContent"></i>
+        </div>
+
+        <header class="section-header">
+            <h3 class="section-title">Últimas peliculas</h3>
+        </header>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <ul id="lastFilmsAdded">
+                    <li data-filter="*" class="filter-active">Todos</li>
+                    <li data-filter=".filter-genre1">Drama</li>
+                    <li data-filter=".filter-genre2">Acción</li>
+                    <li data-filter=".filter-genre3">Terror</li>
+                    <li data-filter=".filter-genre4">Aventuras</li>
+                    <li data-filter=".filter-genre5">Comedia</li>
+                    <li data-filter=".filter-genre6">Historica</li>
+                </ul>
+            </div>
+        </div>
+
+    </section>
+    <!-- #portfolio -->
+</main>
+
+    <!--==========================
+Footer
+============================-->
+    <footer id="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-4 col-md-6 footer-info">
+                        <h3>KingdomTV</h3>
+                        <p>KingdomTV es una aplicación web que nace en la asignatura de DAW de la URJC, como método de
+                            aprendizaje
+                            y ante la curiosidad de los alumnos de realizar una aplicación de seguimiento de peliculas
+                            y series.</p>
+                    </div>
 
 
-                        <div class="col-lg-4 col-md-6 footer-contact">
-                            <h4>Información de contacto</h4>
-                            <p>
-                                Calle Tulipán, s/n,
-                                <br> 28933 Móstoles, Madrid
-                                <br> España
-                                <br>
-                                <strong>Telefono:</strong> +34 916 65 50 60
-                                <br>
-                                <strong>Email:</strong> info@kindomtv.com
-                                <br>
-                            </p>
+                    <div class="col-lg-4 col-md-6 footer-contact">
+                        <a href="/about"><h4>  Información de contacto</h4></a>
+                        <p>
+                            Calle Tulipán, s/n,
+                            <br> 28933 Móstoles, Madrid
+                            <br> España
+                            <br>
+                            <strong>Telefono:</strong> +34 916 65 50 60
+                            <br>
+                            <strong>Email:</strong> info@kindomtv.com
+                            <br>
+                        </p>
 
-                            <div class="social-links">
-                                <a href="#" class="twitter">
-                                    <i class="fa fa-twitter"></i>
-                                </a>
-                                <a href="#" class="facebook">
-                                    <i class="fa fa-facebook"></i>
-                                </a>
-                                <a href="#" class="instagram">
-                                    <i class="fa fa-instagram"></i>
-                                </a>
-                                <a href="#" class="google-plus">
-                                    <i class="fa fa-google-plus"></i>
-                                </a>
-                                <a href="#" class="linkedin">
-                                    <i class="fa fa-linkedin"></i>
-                                </a>
-                            </div>
-
-                        </div>
-
-                        <div class="col-lg-4 col-md-6 footer-newsletter">
-                            <h4>Nuestro equipo de
-                                <br>desarrolladores</h4>
-                            <p>
-                                Jesús Ávila - @SrJesusAM
-                                <br> Miguel Torrijos - @MiguelTG35
-                                <br> Lei Han - @LeiHan1
-                                <br> Sergio Sanchéz - @SergioSV96
-                            </p>
-                            <form action="" method="post">
-                                <input type="email" name="email">
-                                <input type="submit" value="Subscribe">
-                            </form>
+                        <div class="social-links">
+                            <a href="#" class="twitter">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                            <a href="#" class="facebook">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                            <a href="#" class="instagram">
+                                <i class="fa fa-instagram"></i>
+                            </a>
+                            <a href="#" class="google-plus">
+                                <i class="fa fa-google-plus"></i>
+                            </a>
+                            <a href="#" class="linkedin">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
                         </div>
 
                     </div>
+
+                    <div class="col-lg-4 col-md-6 footer-newsletter">
+                        <h4>Nuestro equipo de
+                            <br>desarrolladores</h4>
+                        <p>
+                            Jesús Ávila - @SrJesusAM
+                            <br> Miguel Torrijos - @MiguelTG35
+                            <br> Lei Han - @LeiHan1
+                            <br> Sergio Sanchéz - @SergioSV96
+                        </p>
+                        <form action="" method="post">
+                            <input type="email" name="email">
+                            <input type="submit" value="Subscribe">
+                        </form>
+                    </div>
+
                 </div>
             </div>
+        </div>
 
-            <div class="container">
-                <div class="copyright">
-                    &copy; Copyright
-                    <strong>KingdomTV</strong>. All Rights Reserved
-                </div>
+        <div class="container">
+            <div class="copyright">
+                &copy; Copyright
+                <strong>KingdomTV</strong>. All Rights Reserved
             </div>
-        </footer>
-        <!-- #footer -->
+        </div>
+    </footer>
+    <!-- #footer -->
 
-        <a href="#" class="back-to-top">
-            <i class="fa fa-chevron-up"></i>
-        </a>
+    <a href="#" class="back-to-top">
+        <i class="fa fa-chevron-up"></i>
+    </a>
 
-        <!-- JavaScript Libraries -->
-        <script src="lib/jquery/jquery.min.js"></script>
-        <script src="lib/jquery/jquery-migrate.min.js"></script>
-        <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-        <script src="lib/easing/easing.min.js"></script>
-        <script src="lib/superfish/hoverIntent.js"></script>
-        <script src="lib/superfish/superfish.min.js"></script>
-        <script src="lib/wow/wow.min.js"></script>
-        <script src="lib/waypoints/waypoints.min.js"></script>
-        <script src="lib/counterup/counterup.min.js"></script>
-        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-        <script src="lib/isotope/isotope.pkgd.min.js"></script>
-        <script src="lib/lightbox/js/lightbox.min.js"></script>
-        <script src="lib/touchSwipe/jquery.touchSwipe.min.js"></script>
-        <!-- Contact Form JavaScript File -->
-        <script src="contactform/contactform.js"></script>
+    <!-- JavaScript Libraries -->
+    <script src="lib/jquery/jquery.min.js"></script>
+    <script src="lib/jquery/jquery-migrate.min.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/superfish/hoverIntent.js"></script>
+    <script src="lib/superfish/superfish.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+    <script src="lib/touchSwipe/jquery.touchSwipe.min.js"></script>
+    <!-- Contact Form JavaScript File -->
+    <script src="contactform/contactform.js"></script>
 
-        <!-- SCRIPTS -->
-        <!-- JQuery -->
-        <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-        <!-- Bootstrap tooltips -->
-        <script type="text/javascript" src="js/popper.min.js"></script>
-        <!-- Bootstrap core JavaScript -->
-        <script type="text/javascript" src="js/bootstrap.min.js"></script>
-        <!-- MDB core JavaScript -->
-        <script type="text/javascript" src="js/mdb.min.js"></script>
+    <!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
 
-        <!-- Template Main Javascript File -->
-        <script src="js/main.js"></script>
+    <!-- Template Main Javascript File -->
+    <script src="js/main.js"></script>
 
 </body>
 
