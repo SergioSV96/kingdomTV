@@ -2,9 +2,13 @@ package daw.spring.entities;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -28,27 +32,30 @@ public class User {
 	private String email;
 	
 	//Password ********
-	private String password;
+	private String passwordHash;
 	
 	//Profile image.jpg
 	private String image;
+	
+	//User's roles
+	@ElementCollection(fetch = FetchType.EAGER)
+	private List<String> roles;
 	
 	//User comments
 	@OneToMany(mappedBy="user")
 	private List<Comment> comments;
 	
-	//User type: admin,member,etc. 
-	private String type;
-	
+
 	//Constructor needed to load from the database
 	protected User() {}
 	
 	//Constructor with variables
-	public User(String name, String nick, String email, String pass, String img, String type) {
+	public User(String name, String nick, String email, String pass, String img, String... roles) {
 		this.name = name;
 		this.nickname = nick;
 		this.email = email;
-		this.password = new BCryptPasswordEncoder().encode(pass);
+		this.passwordHash = new BCryptPasswordEncoder().encode(pass);
+		this.roles = new ArrayList<>(Arrays.asList(roles));
 	}
 
 	
@@ -86,12 +93,12 @@ public class User {
 		this.email = email;
 	}
 
-	public String getPassword() {
-		return password;
+	public String getPasswordHash() {
+		return passwordHash;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
+	public void setPasswordHash(String password) {
+		this.passwordHash = password;
 	}
 
 	public String getImage() {
@@ -110,13 +117,14 @@ public class User {
 		this.comments = comments;
 	}
 
-	public String getType() {
-		return type;
+	public List<String> getRoles() {
+		return roles;
 	}
 
-	public void setType(String type) {
-		this.type = type;
+	public void setRoles(List<String> roles) {
+		this.roles = roles;
 	}
+
 	
 	
 	
