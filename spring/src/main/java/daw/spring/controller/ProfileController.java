@@ -1,7 +1,6 @@
 package daw.spring.controller;
 
 import daw.spring.entities.User;
-import daw.spring.security.UserSecurity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,7 +17,7 @@ public class ProfileController
 {
 
 
-    @Autowired
+    /*@Autowired
     private UserSecurity userSecurity;
 
     @RequestMapping("/add_new_user")
@@ -40,6 +39,8 @@ public class ProfileController
         roles.add("USER");
 
     }
+    
+    */
 
     @RequestMapping("/profile")
     public String ProfileController (Model model)

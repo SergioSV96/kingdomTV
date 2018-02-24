@@ -8,14 +8,14 @@ import org.springframework.ui.Model;
 public class LoginController
 {
 	@RequestMapping("/login")
-    public String loginHTML(Model model){
-        model.addAttribute("profileName","Prueba de KingomTV");
-
+    public String loginHTML(){
         return "login";
     }
 
-    @RequestMapping("/loginerror")
+    
+	@RequestMapping("/loginerror")
     public String loginErrorHTML() {
         return "loginerror";
     }
+	
 }
