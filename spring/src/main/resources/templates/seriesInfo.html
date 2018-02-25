@@ -46,322 +46,322 @@
 </head>
 
 <body>
-    <div id="preloader"></div>
+<div id="preloader"></div>
 
-    <!--==========================
+<!--==========================
 Header
 ============================-->
-    <header id="header" class="header-scrolled">
-        <div class="container-fluid">
+<header id="header" class="header-scrolled">
+    <div class="container-fluid">
 
-            <div id="logo" class="pull-left">
-                <!-- <h1><a href="#intro" class="scrollto">KingdomTV</a></h1>-->
-                <!-- Uncomment below if you prefer to use an image logo -->
-                <a href="index.html">
-                    <img src="img/logo/logo.png" alt="" title="" />
-                </a>
-            </div>
-
-            <nav id="nav-menu-container">
-                <ul class="nav-menu">
-                    <li>
-                        <a href="../index">Inicio</a>
-                    </li>
-                    <li>
-                        <a href="../movies">Peliculas</a>
-                    </li>
-                    <li class="menu-active">
-                        <a href="../series">Series</a>
-                    </li>
-                    <li>
-                        <a href="../contact">Contacto</a>
-                    </li>
-                    <li class="menu-has-children">
-                        <a href="../profile">{{profileName}}</a>
-                        <ul>
-                            <li>
-                                <a href="#">Perfil</a>
-                            </li>
-                            <li>
-                                <a href="#">Configuración</a>
-                            </li>
-                            <li>
-                                <a href="#">Cerrar sesión</a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
-            <!-- #nav-menu-container -->
+        <div id="logo" class="pull-left">
+            <!-- <h1><a href="#intro" class="scrollto">KingdomTV</a></h1>-->
+            <!-- Uncomment below if you prefer to use an image logo -->
+            <a href="../index.html">
+                <img src="../img/logo/logo.png" alt="" title="" />
+            </a>
         </div>
-    </header>
-    <!-- #header -->
 
-    <main id="main">
-        <!--==========================
-  Profile Section
+        <nav id="nav-menu-container">
+            <ul class="nav-menu">
+                <li>
+                    <a href="../index">Inicio</a>
+                </li>
+                <li>
+                    <a href="../movies">Peliculas</a>
+                </li>
+                <li class="menu-active">
+                    <a href="../series">Series</a>
+                </li>
+                <li>
+                    <a href="../contact">Contacto</a>
+                </li>
+                <li class="menu-has-children">
+                    <a href="../profile">{{profileName}}</a>
+                    <ul>
+                        <li>
+                            <a href="../profile">Perfil</a>
+                        </li>
+                        <li>
+                            <a href="#">Configuración</a>
+                        </li>
+                        <li>
+                            <a href="#">Cerrar sesión</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <!-- #nav-menu-container -->
+    </div>
+</header>
+<!-- #header -->
+
+<main id="main">
+    <!--==========================
+Profile Section
 ============================-->
-        <section id="contact" class="section-bg wow fadeInUp">
-            <div class="container">
+    <section id="contact" class="section-bg wow fadeInUp">
+        <div class="container">
 
-                <div class="section-header">
-                    <h3>Series</h3>
-                </div>
+            <div class="section-header">
+                <h3>Series</h3>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section>
-            <div class="align-content-sm-center">
-                <div class="container">
-                    <div class="sw">
-                        <form>
-                            <input type="search" class="search" placeholder="Buscar..." />
-                        </form>
-                        <span class="input-group-btn">
+    <section>
+        <div class="align-content-sm-center">
+            <div class="container">
+                <div class="sw">
+                    <form>
+                        <input type="search" class="search" placeholder="Buscar..." />
+                    </form>
+                    <span class="input-group-btn">
                             <button class="btn btn-info" type="button">
                                 <i class="fa fa-search"></i>
                             </button>
                         </span>
-                    </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!--==========================
-  Serie Info Section
+    <!--==========================
+Serie Info Section
 ============================-->
-        <section id="portfolio" class="section-bg">
-            <div class="container">
-                <h3 class="newRelease"></h3>
+    <section id="portfolio" class="section-bg">
+        <div class="container">
+            <h3 class="newRelease"></h3>
 
 
-                <div class="col-lg-14">
-                    <div class="card flex-md-row mb-4 box-shadow h-md-250">
+            <div class="col-lg-14">
+                <div class="card flex-md-row mb-4 box-shadow h-md-250">
 
-                        <img class="card-img-left flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb" alt="Thumbnail [200x250]"
-                            style="width: 337; height: 500px;" src="{{poster}}"
-                            data-holder-rendered="true">
-                        <div class="card-body d-flex flex-column align-items-start">
-                            <strong class="d-inline-block mb-2 text-primary">genre</strong>
-                            <h3 class="mb-0">
-                                <a class="text-dark" href="#">{{title}}</a>
-                            </h3>
-                            <div class="mb-1 text-muted">{{releaseDate}}</div>
-                            <p class="card-text mb-auto">
-                                {{overview}}
-                            </p>
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-md-3 col-sm-6">
-                                        <div class="progress blues">
+                    <img class="card-img-left flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb" alt="Thumbnail [200x250]"
+                         style="width: 337; height: 500px;" src="{{poster}}"
+                         data-holder-rendered="true">
+                    <div class="card-body d-flex flex-column align-items-start">
+                        <strong class="d-inline-block mb-2 text-primary">genre</strong>
+                        <h3 class="mb-0">
+                            <a class="text-dark" href="#">{{title}}</a>
+                        </h3>
+                        <div class="mb-1 text-muted">{{releaseDate}}</div>
+                        <p class="card-text mb-auto">
+                            {{overview}}
+                        </p>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-3 col-sm-6">
+                                    <div class="progress blues">
                                             <span class="progress-left">
                                                 <span class="progress-bar"></span>
                                             </span>
-                                            <span class="progress-right">
+                                        <span class="progress-right">
                                                 <span class="progress-bar"></span>
                                             </span>
-                                            <div class="progress-value">{{voteAverage}}</div>
-                                        </div>
+                                        <div class="progress-value">{{voteAverage}}</div>
                                     </div>
                                 </div>
                             </div>
-
-
                         </div>
+
 
                     </div>
+
                 </div>
+            </div>
 
 
 
 
-                <div class="my-3 p-3 bg-white rounded box-shadow">
-                    <h6 class="border-bottom border-gray pb-2 mb-0">Comentarios</h6>
-                    <div class="reviews">
-                        <div class="media mb-1">
-                            <a class="media-left waves-light">
-                                <img class="rounded-circle" src="https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg" alt="Generic placeholder image">
-                            </a>
-                            <div class="media-body">
-                                <h4 class="media-heading">{{profileName}}</h4>
-                                <ul class="rating inline-ul">
-                                    <li>
-                                        <i class="fa fa-star"></i>
-                                    </li>
-                                    <li>
-                                        <i class="fa fa-star"></i>
-                                    </li>
-                                    <li>
-                                        <i class="fa fa-star"></i>
-                                    </li>
-                                    <li>
-                                        <i class="fa fa-star"></i>
-                                    </li>
-                                    <li>
-                                        <i class="fa fa-star"></i>
-                                    </li>
-                                </ul>
+            <div class="my-3 p-3 bg-white rounded box-shadow">
+                <h6 class="border-bottom border-gray pb-2 mb-0">Comentarios</h6>
+                <div class="reviews">
+                    <div class="media mb-1">
+                        <a class="media-left waves-light">
+                            <img class="rounded-circle" src="https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg" alt="Generic placeholder image">
+                        </a>
+                        <div class="media-body">
+                            <h4 class="media-heading">{{profileName}}</h4>
+                            <ul class="rating inline-ul">
+                                <li>
+                                    <i class="fa fa-star"></i>
+                                </li>
+                                <li>
+                                    <i class="fa fa-star"></i>
+                                </li>
+                                <li>
+                                    <i class="fa fa-star"></i>
+                                </li>
+                                <li>
+                                    <i class="fa fa-star"></i>
+                                </li>
+                                <li>
+                                    <i class="fa fa-star"></i>
+                                </li>
+                            </ul>
 
-                                <div class="md-form">
-                                    <input type="text" id="form1" class="form-control">
-                                    <label for="form1" class="">Comentario sobre la serie</label>
-                                </div>
-
-                                <div class="row justify-content-end">
-                                    <button type="button" class="btn btn-primary btn-sm">Comentar</button>
-                                </div>
+                            <div class="md-form">
+                                <input type="text" id="form1" class="form-control">
+                                <label for="form1" class="">Comentario sobre la serie</label>
                             </div>
-                        </div>
-                        <div class="media mb-1">
-                            <a class="media-left waves-light">
-                                <img class="rounded-circle" src="https://mdbootstrap.com/img/Photos/Avatars/avatar-13.jpg" alt="Generic placeholder image">
-                            </a>
-                            <div class="media-body">
-                                <h4 class="media-heading">John Doe</h4>
-                                <ul class="rating inline-ul">
-                                    <li>
-                                        <i class="fa fa-star amber-text"></i>
-                                    </li>
-                                    <li>
-                                        <i class="fa fa-star amber-text"></i>
-                                    </li>
-                                    <li>
-                                        <i class="fa fa-star amber-text"></i>
-                                    </li>
-                                    <li>
-                                        <i class="fa fa-star"></i>
-                                    </li>
-                                    <li>
-                                        <i class="fa fa-star"></i>
-                                    </li>
-                                </ul>
-                                <p>La serie es pesima xDDDDDDDDDDDDDDDDDdd</p>
-                                <div class="row justify-content-end">
-                                    <button type="button" class="btn btn-red btn-sm">Reportar</button>
-                                </div>
+
+                            <div class="row justify-content-end">
+                                <button type="button" class="btn btn-primary btn-sm">Comentar</button>
                             </div>
                         </div>
                     </div>
+                    <div class="media mb-1">
+                        <a class="media-left waves-light">
+                            <img class="rounded-circle" src="https://mdbootstrap.com/img/Photos/Avatars/avatar-13.jpg" alt="Generic placeholder image">
+                        </a>
+                        <div class="media-body">
+                            <h4 class="media-heading">John Doe</h4>
+                            <ul class="rating inline-ul">
+                                <li>
+                                    <i class="fa fa-star amber-text"></i>
+                                </li>
+                                <li>
+                                    <i class="fa fa-star amber-text"></i>
+                                </li>
+                                <li>
+                                    <i class="fa fa-star amber-text"></i>
+                                </li>
+                                <li>
+                                    <i class="fa fa-star"></i>
+                                </li>
+                                <li>
+                                    <i class="fa fa-star"></i>
+                                </li>
+                            </ul>
+                            <p>La serie es pesima xDDDDDDDDDDDDDDDDDdd</p>
+                            <div class="row justify-content-end">
+                                <button type="button" class="btn btn-red btn-sm">Reportar</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+            </div>
 
 
-        </section>
-        <!-- #portfolio -->
-    </main>
+    </section>
+    <!-- #portfolio -->
+</main>
 
-    <!--==========================
+<!--==========================
 Footer
 ============================-->
-    <footer id="footer">
-        <div class="footer-top">
-            <div class="container">
-                <div class="row">
+<footer id="footer">
+    <div class="footer-top">
+        <div class="container">
+            <div class="row">
 
-                    <div class="col-lg-4 col-md-6 footer-info">
-                        <h3>KingdomTV</h3>
-                        <p>KingdomTV es una aplicación web que nace en la asignatura de DAW de la URJC, como método de aprendizaje
-                            y ante la curiosidad de los alumnos de realizar una aplicación de seguimiento de peliculas y
-                            series.
-                        </p>
-                    </div>
+                <div class="col-lg-4 col-md-6 footer-info">
+                    <h3>KingdomTV</h3>
+                    <p>KingdomTV es una aplicación web que nace en la asignatura de DAW de la URJC, como método de aprendizaje
+                        y ante la curiosidad de los alumnos de realizar una aplicación de seguimiento de peliculas y
+                        series.
+                    </p>
+                </div>
 
 
-                    <div class="col-lg-4 col-md-6 footer-contact">
-                        <a href="/about">
-                            <h4> Información de contacto</h4>
+                <div class="col-lg-4 col-md-6 footer-contact">
+                    <a href="/about">
+                        <h4> Información de contacto</h4>
+                    </a>
+                    <p>
+                        Calle Tulipán, s/n,
+                        <br> 28933 Móstoles, Madrid
+                        <br> España
+                        <br>
+                        <strong>Telefono:</strong> +34 916 65 50 60
+                        <br>
+                        <strong>Email:</strong> info@kindomtv.com
+                        <br>
+                    </p>
+
+                    <div class="social-links">
+                        <a href="#" class="twitter">
+                            <i class="fa fa-twitter"></i>
                         </a>
-                        <p>
-                            Calle Tulipán, s/n,
-                            <br> 28933 Móstoles, Madrid
-                            <br> España
-                            <br>
-                            <strong>Telefono:</strong> +34 916 65 50 60
-                            <br>
-                            <strong>Email:</strong> info@kindomtv.com
-                            <br>
-                        </p>
-
-                        <div class="social-links">
-                            <a href="#" class="twitter">
-                                <i class="fa fa-twitter"></i>
-                            </a>
-                            <a href="#" class="facebook">
-                                <i class="fa fa-facebook"></i>
-                            </a>
-                            <a href="#" class="instagram">
-                                <i class="fa fa-instagram"></i>
-                            </a>
-                            <a href="#" class="google-plus">
-                                <i class="fa fa-google-plus"></i>
-                            </a>
-                            <a href="#" class="linkedin">
-                                <i class="fa fa-linkedin"></i>
-                            </a>
-                        </div>
-
-                    </div>
-
-                    <div class="col-lg-4 col-md-6 footer-newsletter">
-                        <h4>Nuestro equipo de
-                            <br>desarrolladores</h4>
-                        <p>
-                            Jesús Ávila - @SrJesusAM
-                            <br> Miguel Torrijos - @MiguelTG35
-                            <br> Lei Han - @LeiHan1
-                            <br> Sergio Sanchéz - @SergioSV96
-                        </p>
-                        <form action="" method="post">
-                            <input type="email" name="email">
-                            <input type="submit" value="Subscribe">
-                        </form>
+                        <a href="#" class="facebook">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                        <a href="#" class="instagram">
+                            <i class="fa fa-instagram"></i>
+                        </a>
+                        <a href="#" class="google-plus">
+                            <i class="fa fa-google-plus"></i>
+                        </a>
+                        <a href="#" class="linkedin">
+                            <i class="fa fa-linkedin"></i>
+                        </a>
                     </div>
 
                 </div>
+
+                <div class="col-lg-4 col-md-6 footer-newsletter">
+                    <h4>Nuestro equipo de
+                        <br>desarrolladores</h4>
+                    <p>
+                        Jesús Ávila - @SrJesusAM
+                        <br> Miguel Torrijos - @MiguelTG35
+                        <br> Lei Han - @LeiHan1
+                        <br> Sergio Sanchéz - @SergioSV96
+                    </p>
+                    <form action="" method="post">
+                        <input type="email" name="email">
+                        <input type="submit" value="Subscribe">
+                    </form>
+                </div>
+
             </div>
         </div>
+    </div>
 
-        <div class="container">
-            <div class="copyright">
-                &copy; Copyright
-                <strong>KingdomTV</strong>. All Rights Reserved
-            </div>
+    <div class="container">
+        <div class="copyright">
+            &copy; Copyright
+            <strong>KingdomTV</strong>. All Rights Reserved
         </div>
-    </footer>
-    <!-- #footer -->
+    </div>
+</footer>
+<!-- #footer -->
 
-    <a href="#" class="back-to-top">
-        <i class="fa fa-chevron-up"></i>
-    </a>
+<a href="#" class="back-to-top">
+    <i class="fa fa-chevron-up"></i>
+</a>
 
-    <!-- JavaScript Libraries -->
-    <script src="../lib/jquery/jquery.min.js"></script>
-    <script src="../lib/jquery/jquery-migrate.min.js"></script>
-    <script src="../lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="../lib/easing/easing.min.js"></script>
-    <script src="../lib/superfish/hoverIntent.js"></script>
-    <script src="../lib/superfish/superfish.min.js"></script>
-    <script src="../lib/wow/wow.min.js"></script>
-    <script src="../lib/waypoints/waypoints.min.js"></script>
-    <script src="../lib/counterup/counterup.min.js"></script>
-    <script src="../lib/owlcarousel/owl.carousel.min.js"></script>
-    <script src="../lib/isotope/isotope.pkgd.min.js"></script>
-    <script src="../lib/lightbox/js/lightbox.min.js"></script>
-    <script src="../lib/touchSwipe/jquery.touchSwipe.min.js"></script>
-    <!-- Contact Form JavaScript File -->
-    <script src="../contactform/contactform.js"></script>
+<!-- JavaScript Libraries -->
+<script src="../lib/jquery/jquery.min.js"></script>
+<script src="../lib/jquery/jquery-migrate.min.js"></script>
+<script src="../lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../lib/easing/easing.min.js"></script>
+<script src="../lib/superfish/hoverIntent.js"></script>
+<script src="../lib/superfish/superfish.min.js"></script>
+<script src="../lib/wow/wow.min.js"></script>
+<script src="../lib/waypoints/waypoints.min.js"></script>
+<script src="../lib/counterup/counterup.min.js"></script>
+<script src="../lib/owlcarousel/owl.carousel.min.js"></script>
+<script src="../lib/isotope/isotope.pkgd.min.js"></script>
+<script src="../lib/lightbox/js/lightbox.min.js"></script>
+<script src="../lib/touchSwipe/jquery.touchSwipe.min.js"></script>
+<!-- Contact Form JavaScript File -->
+<script src="../contactform/contactform.js"></script>
 
-    <!-- SCRIPTS -->
-    <!-- JQuery -->
-    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
-    <!-- Bootstrap tooltips -->
-    <script type="text/javascript" src="../js/popper.min.js"></script>
-    <!-- Bootstrap core JavaScript -->
-    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
-    <!-- MDB core JavaScript -->
-    <script type="text/javascript" src="../js/mdb.min.js"></script>
+<!-- SCRIPTS -->
+<!-- JQuery -->
+<script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="../js/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="../js/mdb.min.js"></script>
 
-    <!-- Template Main Javascript File -->
-    <script src="../js/main.js"></script>
+<!-- Template Main Javascript File -->
+<script src="../js/main.js"></script>
 
 </body>
 

@@ -1,64 +1,61 @@
 package daw.spring.entities;
 
+import javax.persistence.*;
 import java.util.List;
-
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
 
 @Entity
 public class Movie {
-	
+
 	//Internal identifier for our databases.
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long idLocal;
-	
-    //External identifier for The Movie Database.
-    private long idExternal;
-   
-    //Title of the movie.
-    private String title;
-    
-    //Genres of the movie.
-    @OneToMany(cascade=CascadeType.ALL)
-    private List<Genre> genres;
-    
-    //Synopsis of the movie
-    private String synopsis;
-    
-    //Release date of the film
-    private String releaseDate;
-    
-    //Image of the movie.
-    private String poster;
-    
-    //Comment about the movie from an user
-    @OneToMany(mappedBy="movie")
-    private List<Comment> comments;
-    
-    
-    //Constructor needed to load from the database
-    protected Movie() {}
-    
-    //Constructor with variables
-    public Movie(long idE, String title, List<Genre> genres, String synopsis, String releaseDate,
-    			String poster, List<Comment> comments) {
-    	
-        this.idExternal = idE;
-        this.title = title;
-        this.genres = genres;
-        this.synopsis = synopsis;
-        this.releaseDate = releaseDate;
-        this.poster = poster;
-    }
 
-    
-    //Getters and Setters
-    
+	//External identifier for The Movie Database.
+	private long idExternal;
+
+	//Title of the movie.
+	private String name;
+
+	//Genres of the movie.
+	@OneToMany(cascade=CascadeType.ALL)
+	private List<Genre> genres;
+
+	//Synopsis of the movie
+	private String overview;
+
+	//Release date of the movie
+	private String releaseDate;
+
+	//Image of the movie.
+	private String poster;
+
+	private int voteAverage;
+
+	//Comment about the movie from an user
+	//@OneToMany(mappedBy="movie")
+	// private List<Comment> comments;
+
+
+	//Constructor needed to load from the database
+	protected Movie() {}
+
+	//Constructor with variables
+	public Movie(long idE, String name, List<Genre> genres, String synopsis, String releaseDate,
+				 String poster, List<Comment> comments, int vote_average) {
+
+		this.idExternal = idE;
+		this.name = name;
+		this.genres = genres;
+		this.overview = synopsis;
+		this.releaseDate = releaseDate;
+		this.poster = poster;
+		this.voteAverage = vote_average;
+	}
+
+
+	//Getters and Setters
+
 	public long getIdLocal() {
 		return idLocal;
 	}
@@ -76,11 +73,11 @@ public class Movie {
 	}
 
 	public String getTitle() {
-		return title;
+		return name;
 	}
 
 	public void setTitle(String title) {
-		this.title = title;
+		this.name = title;
 	}
 
 	public List<Genre> getGenres() {
@@ -92,11 +89,11 @@ public class Movie {
 	}
 
 	public String getSynopsis() {
-		return synopsis;
+		return overview;
 	}
 
 	public void setSynopsis(String synopsis) {
-		this.synopsis = synopsis;
+		this.overview = synopsis;
 	}
 
 	public String getReleaseDate() {
@@ -115,12 +112,20 @@ public class Movie {
 		this.poster = poster;
 	}
 
-	public List<Comment> getComments() {
-		return comments;
+	public int getVoteAverage() {
+		return voteAverage;
 	}
 
-	public void setComments(List<Comment> comments) {
+	public void setVoteAverage(int voteAverage) {
+		this.voteAverage = voteAverage;
+	}
+
+    /*public List<Comment> getComments() {
+		return comments;
+	}*/
+
+	/*public void setComments(List<Comment> comments) {
 		this.comments = comments;
-	}    
-	
+	} */
+
 }

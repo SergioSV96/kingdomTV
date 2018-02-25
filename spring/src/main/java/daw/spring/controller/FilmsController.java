@@ -37,6 +37,8 @@ public class FilmsController {
     public String peliculasHTML(Model model)
     {
 
+        model.addAttribute("profileName","Prueba de KingomTV");
+
         List<Movie> sf = new ApiParser().SearchFilms("Teken");
 
         model.addAttribute("recommendedFilms", sf);
