@@ -45,7 +45,7 @@ public class ApiParser
             JSONObject jo = ReadJsonFromUrl("https://api.themoviedb.org/3/movie/" + id + "?api_key=c16e8d049b0c5c16b9f10f731876549b");
             Movie movie = new Movie(jo.getLong("id"), jo.getString("title"),
                     gr, jo.getString("overview"), jo.getString("release_date"),
-                    "https://image.tmdb.org/t/p/w500" + jo.getString("poster_path"), null, jo.getInt("vote_average"));
+                    "https://image.tmdb.org/t/p/w500" + jo.getString("poster_path"), null, jo.getInt("vote_average"), 0);
             return movie;
         }
         catch (IOException exIO)
@@ -84,7 +84,7 @@ public class ApiParser
 
                 Movie movie = new Movie (arrayList.get(i).getLong("id"), arrayList.get(i).getString("title"),
                         genresFakes, arrayList.get(i).getString("overview"), arrayList.get(i).getString("release_date"),
-                        "https://image.tmdb.org/t/p/w500" + imgPath, null, arrayList.get(i).getInt("vote_average"));
+                        "https://image.tmdb.org/t/p/w500" + imgPath, null, arrayList.get(i).getInt("vote_average"), 0);
 
                 list.add(movie);
             }

@@ -102,7 +102,7 @@
                         <ul class="dropdown-menu pull-right">
                             <li>
                                 <a href="javascript:void(0);">
-                                    <i class="material-icons">person</i>Profile</a>
+                                    <i class="material-icons" href="../profile">person</i>Profile</a>
                             </li>
                             <li role="seperator" class="divider"></li>
                             <li>
@@ -188,13 +188,14 @@
                             </tr>
                         </thead>
                         <tbody>
+                        {{#movies}}
                             <tr>
                                 <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                                <td>2017</td>
-                                <td>5</td>
+                                <td>{{idLocal}}}</td>
+                                <td>{{idExternal}}</td>
+                                <td>{{title}}</td>
+                                <td>{{releaseDate}}</td>
+                                <td>{{viewed}}</td>
                                 <td>
                                     <button type="button" class="btn bg-deep-purple waves-effect">
                                         <i class="material-icons">delete</i>
@@ -205,7 +206,8 @@
                                         <i class="material-icons">refresh</i>
                                     </button>
                                 </td>
-                            </tr>                            
+                            </tr>
+                        {{/movies}}
                         </tbody>
                     </table>
                 </div>

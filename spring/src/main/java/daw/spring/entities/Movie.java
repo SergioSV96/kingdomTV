@@ -32,6 +32,8 @@ public class Movie {
 
 	private int voteAverage;
 
+	private int viewed;
+
 	//Comment about the movie from an user
 	//@OneToMany(mappedBy="movie")
 	// private List<Comment> comments;
@@ -42,7 +44,7 @@ public class Movie {
 
 	//Constructor with variables
 	public Movie(long idE, String name, List<Genre> genres, String synopsis, String releaseDate,
-				 String poster, List<Comment> comments, int vote_average) {
+				 String poster, List<Comment> comments, int vote_average, int viewed) {
 
 		this.idExternal = idE;
 		this.name = name;
@@ -51,6 +53,7 @@ public class Movie {
 		this.releaseDate = releaseDate;
 		this.poster = poster;
 		this.voteAverage = vote_average;
+		this.viewed = viewed;
 	}
 
 
@@ -128,4 +131,11 @@ public class Movie {
 		this.comments = comments;
 	} */
 
+    public void setViewed(int viewed) {
+        this.viewed = viewed;
+    }
+
+    public int getViewed() {
+        return viewed;
+    }
 }

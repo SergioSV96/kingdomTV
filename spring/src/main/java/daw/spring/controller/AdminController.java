@@ -1,5 +1,6 @@
 package daw.spring.controller;
 
+import daw.spring.Services.MoviesServices;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,8 +17,14 @@ public class AdminController
 
     @RequestMapping("/moviesPage")
     public String moviesPageHTML(Model model){
+
+        MoviesServices ms = new MoviesServices();
+
+        model.addAttribute("movies", ms.getAllPFilms());
+
         model.addAttribute("profileName", "Administrador");
         model.addAttribute("mailUser", "admin@kingdom.tv");
+
         return "moviesPage";
     }
 
