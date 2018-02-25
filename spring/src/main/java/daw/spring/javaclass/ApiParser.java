@@ -94,10 +94,13 @@ public class ApiParser
     {
         try
         {
+            List<Genre> gr = new ArrayList<Genre>();
+            gr.add(new Genre("Ciencia Ficcion"));
+
             JSONObject jo = ReadJsonFromUrl("https://api.themoviedb.org/3/tv/" + id + "?api_key=c16e8d049b0c5c16b9f10f731876549b");
             Serie serie = new Serie(jo.getLong("id"), jo.getString("name"),
-                    null, jo.getString("overview"), jo.getString("release_date"),
-                    "https://image.tmdb.org/t/p/w500" + jo.getString("poster_path"), null);
+                    gr, jo.getString("overview"), jo.getString("first_air_date"),
+                    "https://image.tmdb.org/t/p/w500" + jo.getString("poster_path"), null, jo.getInt("vote_average"));
             return serie;
         }
         catch (IOException exIO)
@@ -136,7 +139,7 @@ public class ApiParser
 
                 Serie serie = new Serie (arrayList.get(i).getLong("id"), arrayList.get(i).getString("name"),
                         genresFakes, arrayList.get(i).getString("overview"), arrayList.get(i).getString("first_air_date"),
-                        "https://image.tmdb.org/t/p/w500" + imgPath, null);
+                        "https://image.tmdb.org/t/p/w500" + imgPath, null, arrayList.get(i).getInt("vote_average"));
 
                 list.add(serie);
             }

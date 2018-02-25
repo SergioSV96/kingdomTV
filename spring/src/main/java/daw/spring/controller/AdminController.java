@@ -28,10 +28,19 @@ public class AdminController
         return "showsPage";
     }
 
+    /////////////////////
+    //USERS ADMIN METHODS
+    /////////////////////
+
     @RequestMapping("/usersPage")
-    public String usersPageHTML(Model model){
+    public String usersPageHTML(Model model)
+    {
         model.addAttribute("profileName", "Administrador");
         model.addAttribute("mailUser", "admin@kingdom.tv");
         return "usersPage";
     }
+
+    /////////////////////////
+    //END USERS ADMIN METHODS
+    /////////////////////////
 }

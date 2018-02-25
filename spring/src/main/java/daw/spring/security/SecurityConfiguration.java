@@ -25,8 +25,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         http.authorizeRequests().antMatchers("/about").permitAll();
         http.authorizeRequests().antMatchers("/contact").permitAll();
         http.authorizeRequests().antMatchers("/index").permitAll();
-        http.authorizeRequests().antMatchers("/infopeli").permitAll();
-        http.authorizeRequests().antMatchers("/infoserie").permitAll();
+        http.authorizeRequests().antMatchers("/infopeli/**").permitAll();
+        http.authorizeRequests().antMatchers("/infoserie/**").permitAll();
         http.authorizeRequests().antMatchers("/movies").permitAll();
         http.authorizeRequests().antMatchers("/peliculas").permitAll();
         http.authorizeRequests().antMatchers("/register").permitAll();
@@ -34,7 +34,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
         // Private pages (all other pages)
         http.authorizeRequests().antMatchers("/profile").hasAnyRole("USER");
-        http.authorizeRequests().antMatchers("/admin").hasAnyRole("ADMIN");
+        http.authorizeRequests().antMatchers("/adminMain").hasAnyRole("ADMIN");
 
         // Login form
         http.formLogin().loginPage("/login");
