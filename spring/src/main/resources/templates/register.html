@@ -82,156 +82,17 @@
               <div class="col-sm-8 col-sm-offset-2">
                   <!-- Wizard container -->
                   <div class="wizard-container">
-                      <div class="card wizard-card" data-color="red" id="wizard">
-                          <form action="" method="">
-                              <!--        You can switch " data-color="blue" "  with one of the next bright colors: "green", "orange", "red", "purple"             -->
-
-                              <div class="wizard-header">
-                                  <h2 class="wizard-title"> Registro </h2>
-                                  <h5>Rellena todos los datos para completar tu registro.</h5>
-                              </div>
-                              <div class="wizard-navigation">
-                                  <ul>
-                                      <li>
-                                          <a href="#details" data-toggle="tab">Datos personales</a>
-                                      </li>
-                                      <li>
-                                          <a href="#captain" data-toggle="tab">Generos favoritos</a>
-                                      </li>
-                                  </ul>
-                              </div>
-
-                              <div class="tab-content">
-                                  <div class="tab-pane" id="details">
-                                      <div class="row">
-
-                                          <!-- ******************** SECCION DE DATOS PERSONALES *********************************************************** -->
-
-                                          <div class="col-md-6 col-sm-8 mx-auto">
-                                              <form id="contactForm" name="sentMessage" novalidate>
-                                                  <div class="row">
-                                                      <div class="col-lg-12 ">
-                                                          <div class="form-group">
-                                                              <input class="form-control" id="name" type="text" placeholder="Nombre *" required data-validation-required-message="Por favor introduce tu nombre.">
-                                                              <p class="help-block text-danger"></p>
-                                                          </div>
-                                                          <div class="form-group">
-                                                              <input class="form-control" id="phone" type="tel" placeholder="Nombre de usuario *" required data-validation-required-message="Por favor introduce tu nombre de usuario.">
-                                                              <p class="help-block text-danger"></p>
-                                                          </div>
-                                                          <div class="form-group">
-                                                              <input class="form-control" id="email" type="email" placeholder="Correo electronico *" required data-validation-required-message="Por favor introduce tu dirección de correo electónico.">
-                                                              <p class="help-block text-danger"></p>
-                                                          </div>
-                                                          <div class="form-group">
-                                                              <input class="form-control" id="phone" type="tel" placeholder="Contraseña *" required data-validation-required-message="Por favor introduce tu contraseña.">
-                                                              <p class="help-block text-danger"></p>
-                                                          </div>
-                                                          <div class="form-group">
-                                                              <input class="form-control" id="phone" type="tel" placeholder="Repita la contraseña *" required data-validation-required-message="Por favor vuelva a introducir la contraseña.">
-                                                              <p class="help-block text-danger"></p>
-                                                          </div>
-                                                      </div>
-                                                      <div class="clearfix"></div>
-
-                                                  </div>
-                                              </form>
-                                          </div>
-
-
-                                          <!-- ******************************************************************************* -->
-
-
-                                      </div>
-                                  </div>
-                                  <div class="tab-pane" id="captain">
-                                      <h4 class="info-text">Qué generos te gustan? (elegir tres) </h4>
-                                      <div class="col-lg-12">
-
-                                          <div class="row">
-                                              <div class="col-lg-4 col-md-4 col-xs-12">
-                                                  <button type="button" class="btn btn-primary" id="accion" data-toggle="button" aria-pressed="false"  autocomplete="off">
-                                                      Acción
-                                                  </button>
-                                              </div>
-                                              <div class="col-lg-4 col-md-4 col-xs-12">
-                                                  <button type="button" class="btn btn-primary" id="comedia" data-toggle="button" aria-pressed="false" autocomplete="off">
-                                                      Comedia
-                                                  </button>
-                                              </div>
-
-                                              <div class="col-lg-4 col-md-4 col-xs-12">
-                                                  <button type="button" class="btn btn-primary" id="terror" data-toggle="button" aria-pressed="false" autocomplete="off">
-                                                      Terror
-                                                  </button>
-                                              </div>
-
-                                          </div>
-
-
-
-                                          <div class="row">
-                                              <div class="col-lg-4 col-md-4 col-xs-12">
-                                                  <button type="button" class="btn btn-primary" id="cienciaFiccion" data-toggle="button" aria-pressed="false" autocomplete="off">
-                                                      Ciencia ficción
-                                                  </button>
-                                              </div>
-
-                                              <div class="col-lg-4 col-md-4 col-xs-12">
-                                                  <button type="button" class="btn btn-primary" id="drama" data-toggle="button" aria-pressed="false" autocomplete="off">
-                                                      Drama
-                                                  </button>
-                                              </div>
-
-                                              <div class="col-lg-4 col-md-4 col-xs-12">
-                                                  <button type="button" class="btn btn-primary" id="animacion" data-toggle="button" aria-pressed="false" autocomplete="off">
-                                                      Animación
-                                                  </button>
-                                              </div>
-
-                                          </div>
-
-
-
-                                          <div class="row">
-                                              <div class="col-lg-4 col-md-4 col-xs-12">
-                                                  <button type="button" class="btn btn-primary" id="historico" data-toggle="button" aria-pressed="false" autocomplete="off">
-                                                      Histórico
-                                                  </button>
-                                              </div>
-
-                                              <div class="col-lg-4 col-md-4 col-xs-12">
-                                                  <button type="button" class="btn btn-primary" id="romantico" data-toggle="button" aria-pressed="false" autocomplete="off">
-                                                      Romántico
-                                                  </button>
-                                              </div>
-
-                                              <div class="col-lg-4 col-md-4 col-xs-12">
-                                                  <button type="button" class="btn btn-primary" id="aventuras" data-toggle="button" aria-pressed="false" autocomplete="off">
-                                                      Aventuras
-                                                  </button>
-                                              </div>
-                                          </div>
-
-
-
-                                      </div>
-                                  </div>
-                              </div>
-                              <div class="wizard-footer">
-                                  <div class="pull-right">
-                                      <input type='button' class='btn btn-next btn-fill btn-danger btn-wd' name='next' value='SIGUIENTE' />
-                                      <input type='button' id="sendMessageButton" class='btn btn-finish btn-fill btn-danger btn-wd' name='finish' value='REGISTRARSE'
-                                          type="submit" />
-                                  </div>
-                                  <div class="pull-left">
-                                      <input type='button' class='btn btn-previous btn-fill btn-default btn-wd' name='previous' value='Anterior' />
-                                  </div>
-                                  <div class="clearfix"></div>
-                              </div>
-                          </form>
-                      </div>
-                  </div>
+		                        <div class="card wizard-card" data-color="blue" id="wizard">
+		                            <form action="/register" method="post">
+										<label>Nombre:</label><input type="text" name="name" /><br />
+										<label>@Usuario:</label><input type="text" name="nick" /><br />
+										<label>Email:</label><input type="text" name="email" /><br />
+										<label>Contraseña:</label><input type="password" name="pass" /><br />
+										<input type="submit" value="Registrarse" /><br />				
+										<input type="hidden" name="_csrf" value="{{token}}"/>
+									</form>
+		                        </div>
+		                    </div>
                   <!-- wizard container -->
               </div>
           </div>
