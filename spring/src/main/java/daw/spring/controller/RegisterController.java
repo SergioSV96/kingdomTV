@@ -1,11 +1,8 @@
 package daw.spring.controller;
 
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
-
 import daw.spring.entities.User;
 import daw.spring.repositories.UserRepository;
 
@@ -36,7 +33,7 @@ public class RegisterController
     public String registerUser(@RequestParam String name, @RequestParam String nick,
     						   @RequestParam String email, @RequestParam String pass){
        
-    	userRepository.save(new User(name, nick, email, pass, null, "ROLE_USER"));
+    	userRepository.save(new User(name, nick, email, pass, "", "ROLE_USER"));
     	
         return "login";
         

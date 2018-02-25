@@ -19,7 +19,7 @@ public class DatabaseUsersLoader {
     	
     	//User(String name, String nick, String email, String pass, String img, String... roles)
     	userRepository.save(new User("User", "user", "email", "pass", "", "ROLE_USER"));
-		userRepository.save(new User("Admin", "admin", "pass", "", "ROLE_USER", "ROLE_ADMIN"));
+		userRepository.save(new User("Admin", "admin", "email", "pass", "", "ROLE_USER", "ROLE_ADMIN"));
     }
 
 }
