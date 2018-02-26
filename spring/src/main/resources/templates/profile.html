@@ -129,8 +129,12 @@
                                                     width="128px" heigth="128px">
                                             </div>
                                         </div>
-                                        <p></p>
-                                        <a class="btn btn-green">Cambiar imagen</a>
+                                        <form method="POST" enctype="multipart/form-data" action="/upload">
+											<table>
+												<tr><td>Cambiar imagen</td><td><input type="file" name="file" /></td></tr>
+												<tr><td></td><td><input type="submit" value="Upload" /></td></tr>
+											</table>
+										</form>
                                     </div>
                                 </div>
                             </div>

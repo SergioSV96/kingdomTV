@@ -30,7 +30,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         http.authorizeRequests().antMatchers("/movies").permitAll();
         http.authorizeRequests().antMatchers("/register").permitAll();
         http.authorizeRequests().antMatchers("/series").permitAll();
-
+        
         // Private pages (all other pages)
         http.authorizeRequests().antMatchers("/profile").hasAnyRole("USER");
         http.authorizeRequests().antMatchers("/adminMain").hasAnyRole("ADMIN");
