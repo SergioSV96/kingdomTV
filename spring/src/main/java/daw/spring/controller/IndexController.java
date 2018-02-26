@@ -1,5 +1,7 @@
 package daw.spring.controller;
 
+import java.security.Principal;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -12,16 +14,19 @@ public class IndexController {
     private Logger log = LoggerFactory.getLogger(this.getClass());
 
     @RequestMapping("/")
-    public String index(Model model) {
+    public String index(Model model, Principal principal) {
         log.info("Root path");
-        model.addAttribute("profileName","Prueba de KingomTV");
+        if (principal.getName() != null) {
+        	model.addAttribute("profileName", principal.getName());
+        }
+        model.addAttribute("profileName","Iniciar sesión");
         return "index";
     }
 
     @RequestMapping("/index")
-    public void index2(Model model) {
+    public void index2(Model model, Principal principal) {
         log.info("Routing to root path");
-        index(model);
+        index(model, principal);
     }
 
 }
