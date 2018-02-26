@@ -72,19 +72,19 @@ Screenshots of the pages
 
 1. Inicio: Main page from the KingdomTV. In which you will be able to see a brief information about the characteristics of the website.
 
-![alt text](https://github.com/SergioSV96/kingdomTV/blob/master/KingdomTV_ScreenShots/Captura_de_pantalla_(13).PNG "Index")
+![alt text](https://github.com/SergioSV96/kingdomTV/blob/master/KingdomTV_ScreenShots/Captura%20de%20pantalla%20(13).png "Index")
 
 2. Peliculas: Page where you can find the movies section, where there are some recommendations and you can also perform an advanced search.
 
-![alt text](https://github.com/SergioSV96/kingdomTV/blob/master/KingdomTV_ScreenShots/Captura_de_pantalla_(14).PNG "Peliculas")
+![alt text](https://github.com/SergioSV96/kingdomTV/blob/master/KingdomTV_ScreenShots/Captura%20de%20pantalla%20(14).png "Peliculas")
 
 3. Series:  Page where you can find the shows section, where there are some recommendations and you can also perform an advanced search.
 
-![alt text](https://github.com/SergioSV96/kingdomTV/blob/master/KingdomTV_ScreenShots/Captura_de_pantalla_(15).PNG "Series")
+![alt text](https://github.com/SergioSV96/kingdomTV/blob/master/KingdomTV_ScreenShots/Captura%20de%20pantalla%20(15).png "Series")
 
 4. Contacto: Here you can get in touch with the website, in case you want us to add a movie or any doubt or suggestion.
 
-![alt text](https://github.com/SergioSV96/kingdomTV/blob/master/KingdomTV_ScreenShots/Captura_de_pantalla_(17).PNG "Contacto")
+![alt text](https://github.com/SergioSV96/kingdomTV/blob/master/KingdomTV_ScreenShots/Captura%20de%20pantalla%20(17).png "Contacto")
 
 5. Sobre nosotros: Here you will find information about the project and its members.
 
