@@ -48,7 +48,7 @@ In this repository we will place our web application, where we can control the i
 	- Report notifications.
 	- Comments.
 	
-![diagrama bbdd.jpg](https://github.com/SergioSV96/kingdomTV/blob/master/KingdomTV_ScreenShots/diagrama bbdd.PNG)	
+![diagrama bbdd.png](https://github.com/SergioSV96/kingdomTV/blob/master/KingdomTV_ScreenShots/diagrama bbdd.PNG)	
 	
 ### Advanced functionality
 
