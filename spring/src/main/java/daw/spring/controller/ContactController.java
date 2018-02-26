@@ -5,8 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.ui.Model;
 
 @Controller
-public class ContactController
-{
+public class ContactController{
 
     @RequestMapping("/contact")
     public String contactHTML(Model model){

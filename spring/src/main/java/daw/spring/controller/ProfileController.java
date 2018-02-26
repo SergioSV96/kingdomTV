@@ -3,6 +3,7 @@ package daw.spring.controller;
 import java.security.Principal;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -11,8 +12,9 @@ public class ProfileController {
 	//public static UserRepository userRepository;
 	
     @RequestMapping("/profile")
-    public String profileController () {
+    public String profileController (Model model, Principal principal) {
     	
+    	model.addAttribute("usuario", principal.getName());
     	//((User) model.addAttribute("image", principal.getName())).getImage();
     	
         return "profile";
