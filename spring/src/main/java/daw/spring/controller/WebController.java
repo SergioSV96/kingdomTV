@@ -191,7 +191,7 @@ public class WebController {
 
         model.addAttribute("profileName","Prueba de KingomTV");
 
-        List<Movie> sf = new ApiParser().SearchFilms("Teken");
+        List<Movie> sf = new ApiParser().SearchFilms("Lost");
 
         model.addAttribute("recommendedFilms", sf);
 
