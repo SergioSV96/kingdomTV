@@ -19,7 +19,7 @@ public class MoviesServices {
         return movieRepository.findAll(page);
     }
 
-    public List<Movie> getAllPFilms() {
+    public List<Movie> getAllFilms() {
         return movieRepository.findAll();
     }
 

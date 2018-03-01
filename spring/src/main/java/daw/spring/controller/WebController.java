@@ -1,10 +1,12 @@
 package daw.spring.controller;
 
 import java.security.Principal;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
 
+import daw.spring.entities.Genre;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -230,8 +232,8 @@ public class WebController {
     
     @PostConstruct
     public void initialize() {
-        // repository.save(new TypeFilm(1, "Serie 1", "Drama", "05-02-2017", "https://image.tmdb.org/t/p/w500/adw6Lq9FiC9zjYEpOqfq03ituwp.jpg"));
-        // repository.save(new TypeFilm(2, "Serie 2", "Accion", "31-02-2050", "https://image.tmdb.org/t/p/w500/adw6Lq9FiC9zjYEpOqfq03ituwp.jpg"));
+
+
     }
 
     @RequestMapping("/series")
@@ -262,13 +264,27 @@ public class WebController {
     @RequestMapping("/moviesPage")
     public String moviesPageHTML(Model model){
 
+        List<Genre> gr = new ArrayList<Genre>();
+        gr.add(new Genre("Drama"));
+        Movie m1 = new Movie(1, "Nombre", gr, "asda", "15-45-8446", "",  null, 78, 951);
+        movieRepository.save(m1);
+
         MoviesServices ms = new MoviesServices();
 
-        model.addAttribute("movies", ms.getAllPFilms());
+        model.addAttribute("movies", movieRepository.findAll());
 
         model.addAttribute("profileName", "Administrador");
         model.addAttribute("mailUser", "admin@kingdom.tv");
 
+        return "moviesPage";
+    }
+
+    @RequestMapping("/moviesPage/delete/{id}")
+    public String moviesPageHTML(Model model, @PathVariable long id)
+    {
+        movieRepository.delete(id);
+        model.addAttribute("profileName", "Administrador");
+        model.addAttribute("mailUser", "admin@kingdom.tv");
         return "moviesPage";
     }
 
@@ -295,7 +311,13 @@ public class WebController {
 //END USERS ADMIN METHODS
 /////////////////////////
 
-    
+    @RequestMapping("/messagesPage")
+    public String messagesPageHTML(Model model)
+    {
+        model.addAttribute("profileName", "Administrador");
+        model.addAttribute("mailUser", "admin@kingdom.tv");
+        return "messagesPage";
+    }
     
 	
 }

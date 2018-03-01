@@ -191,13 +191,13 @@
                         {{#movies}}
                             <tr>
                                 <th scope="row">1</th>
-                                <td>{{idLocal}}}</td>
+                                <td>{{idLocal}}</td>
                                 <td>{{idExternal}}</td>
                                 <td>{{title}}</td>
                                 <td>{{releaseDate}}</td>
                                 <td>{{viewed}}</td>
                                 <td>
-                                    <button type="button" class="btn bg-deep-purple waves-effect">
+                                    <button type="button" href="moviesPage/delete/{{idLocal}}" type="submit" class="btn bg-deep-purple waves-effect">
                                         <i class="material-icons">delete</i>
                                     </button>
                                 </td>
