@@ -48,9 +48,16 @@ public class WebController {
         return "index";
         */
 		
+		
+		throw new RuntimeException("Dummy Exception");
+		
+		
+		/*
 		model.addAttribute("profileName", "Test");
 		
 		return "index";
+		
+		*/
     }
 	
 	
