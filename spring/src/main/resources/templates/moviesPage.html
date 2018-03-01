@@ -184,7 +184,6 @@
                                 <th>AÑO</th>
                                 <th>V. VISTO</th>
                                 <th>ELIMINAR</th>
-                                <th>ACTUALIZAR</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -197,14 +196,9 @@
                                 <td>{{releaseDate}}</td>
                                 <td>{{viewed}}</td>
                                 <td>
-                                    <button type="button" href="moviesPage/delete/{{idLocal}}" type="submit" class="btn bg-deep-purple waves-effect">
+                                    <a href="moviesPage/delete/{{idLocal}}" type="submit" class="btn bg-deep-purple waves-effect">
                                         <i class="material-icons">delete</i>
-                                    </button>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn bg-green waves-effect">
-                                        <i class="material-icons">refresh</i>
-                                    </button>
+                                    </a>
                                 </td>
                             </tr>
                         {{/movies}}

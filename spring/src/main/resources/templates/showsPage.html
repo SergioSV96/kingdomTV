@@ -184,10 +184,10 @@
                                 <th>AÑO</th>
                                 <th>V. VISTO</th>
                                 <th>ELIMINAR</th>
-                                <th>ACTUALIZAR</th>
                             </tr>
                         </thead>
                         <tbody>
+                        {{#series}}
                             <tr>
                                 <th scope="row">1</th>
                                 <td>Mark</td>
@@ -196,16 +196,12 @@
                                 <td>2017</td>
                                 <td>5</td>
                                 <td>
-                                    <button type="button" class="btn bg-deep-purple waves-effect">
+                                    <a href="showsPage/delete/{{idLocal}}" class="btn bg-deep-purple waves-effect">
                                         <i class="material-icons">delete</i>
-                                    </button>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn bg-green waves-effect">
-                                        <i class="material-icons">refresh</i>
-                                    </button>
+                                    </a>
                                 </td>
                             </tr>
+                        {{/series}}
                         </tbody>
                     </table>
                 </div>

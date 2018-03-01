@@ -187,19 +187,21 @@
                             </tr>
                         </thead>
                         <tbody>
+                        {{#users}}
                             <tr>
                                 <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
-                                <td>2017</td>
+                                <td>{{id}}</td>
+                                <td>{{nickname}}</td>
+                                <td>{{name}}</td>
+                                <td>{{passwordHash}}</td>
                                 <td>5</td>
                                 <td>
-                                    <button type="button" class="btn bg-deep-purple waves-effect">
+                                    <a href="usersPage/delete/{{id}}" class="btn bg-deep-purple waves-effect">
                                         <i class="material-icons">delete</i>
-                                    </button>
+                                    </a>
                                 </td>
-                            </tr>                            
+                            </tr>
+                        {{/users}}
                         </tbody>
                     </table>
                 </div>

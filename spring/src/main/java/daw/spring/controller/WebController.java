@@ -295,6 +295,15 @@ public class WebController {
         return "showsPage";
     }
 
+    @RequestMapping("/showsPage/delete/{id}")
+    public String showsPageHTML(Model model, @PathVariable long id)
+    {
+        serierepository.delete(id);
+        model.addAttribute("profileName", "Administrador");
+        model.addAttribute("mailUser", "admin@kingdom.tv");
+        return "showsPage";
+    }
+
 /////////////////////
 //USERS ADMIN METHODS
 /////////////////////
@@ -302,6 +311,17 @@ public class WebController {
     @RequestMapping("/usersPage")
     public String usersPageHTML(Model model)
     {
+
+        model.addAttribute("users", userRepository.findAll());
+        model.addAttribute("profileName", "Administrador");
+        model.addAttribute("mailUser", "admin@kingdom.tv");
+        return "usersPage";
+    }
+
+    @RequestMapping("/usersPage/delete/{id}")
+    public String usersPageHTML(Model model, @PathVariable long id)
+    {
+        userRepository.delete(id);
         model.addAttribute("profileName", "Administrador");
         model.addAttribute("mailUser", "admin@kingdom.tv");
         return "usersPage";
