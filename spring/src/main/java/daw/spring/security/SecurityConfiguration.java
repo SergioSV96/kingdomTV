@@ -17,6 +17,17 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
     	
+    	
+    	//THIS ENABLES H2 CONSOLE BUT DISABLES HTTPS AND SPRING SECURITY
+    	/*
+    	http.authorizeRequests().antMatchers("/").permitAll().and()
+        	.authorizeRequests().antMatchers("/console/**").permitAll();
+
+		http.csrf().disable();
+		http.headers().frameOptions().disable();
+    	*/
+		
+		
     	// Public pages
         http.authorizeRequests().antMatchers("/").permitAll();
         http.authorizeRequests().antMatchers("/login").permitAll();
@@ -42,7 +53,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         http.formLogin().loginPage("/login");
         http.formLogin().usernameParameter("username");
         http.formLogin().passwordParameter("password");
-        http.formLogin().defaultSuccessUrl("/");
+        http.formLogin().defaultSuccessUrl("/profile");
         http.formLogin().failureUrl("/loginerror");
 
         // Logout
@@ -51,8 +62,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     }
 
     @Override
-    protected void configure(AuthenticationManagerBuilder auth)
-            throws Exception {
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         // Database authentication provider
         auth.authenticationProvider(authenticationProvider);
     }

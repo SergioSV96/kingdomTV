@@ -35,7 +35,7 @@ public class User {
 	private String passwordHash;
 	
 	//Profile image.jpg
-	private String image;
+	private boolean imageUploaded;
 	
 	//User's roles
 	@ElementCollection(fetch = FetchType.EAGER)
@@ -50,12 +50,13 @@ public class User {
 	protected User() {}
 	
 	//Constructor with variables
-	public User(String name, String nick, String email, String pass, String img, String... roles) {
+	public User(String name, String nick, String email, String pass, String... roles) {
 		this.name = name;
 		this.nickname = nick;
 		this.email = email;
 		this.passwordHash = new BCryptPasswordEncoder().encode(pass);
 		this.roles = new ArrayList<>(Arrays.asList(roles));
+		this.imageUploaded = false;
 	}
 
 	
@@ -98,15 +99,15 @@ public class User {
 	}
 
 	public void setPasswordHash(String password) {
-		this.passwordHash = password;
+		this.passwordHash = new BCryptPasswordEncoder().encode(password);
 	}
 
-	public String getImage() {
-		return image;
+	public boolean isImageUploaded() {
+		return imageUploaded;
 	}
 
-	public void setImage(String image) {
-		this.image = image;
+	public void setImageUploaded(boolean imageUploaded) {
+		this.imageUploaded = imageUploaded;
 	}
 
 	public List<Comment> getComments() {

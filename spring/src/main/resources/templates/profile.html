@@ -80,7 +80,7 @@
                         <a href="contact.html">Contacto</a>
                     </li>
                     <li class="menu-active" class="menu-has-children">
-                        <a href="login.html">{{usuario}}</a>
+                        <a href="login.html">{{name}}</a>
                         <ul>
                             <li>
                                 <a href="profile.html">Perfil</a>
@@ -125,14 +125,15 @@
                                         <h4 class="card-title"></h4>
                                         <div class="row">
                                             <div class="col text-center">
-                                                <img src="https://mdbootstrap.com/img/Photos/Avatars/img(31).jpg" class="img-fluid z-depth-1 rounded-circle" alt="Responsive image"
+                                                <img src="{{image}}" class="img-fluid z-depth-1 rounded-circle" alt="Responsive image"
                                                     width="128px" heigth="128px">
                                             </div>
                                         </div>
                                         <form method="POST" enctype="multipart/form-data" action="/upload">
 											<table>
 												<tr><td>Cambiar imagen</td><td><input type="file" name="file" /></td></tr>
-												<tr><td></td><td><input type="submit" value="Upload" /></td></tr>
+                                                <tr><td></td><td><input type="submit" value="Subir" /></td></tr>
+                                                <input type="hidden" name="_csrf" value="{{token}}"/>
 											</table>
 										</form>
                                     </div>
@@ -188,15 +189,37 @@
                                     <div class="card-header red lighten-1 white-text">Opciones</div>
                                     <div class="card-body">
                                         <h4 class="card-title">Cuenta</h4>
-                                        <ul class="list-group">
-                                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                                                Contraseña
-                                                <a class="btn btn-red btn-sm">Cambiar</a>
-                                            </li>
-                                        </ul>
+                                            <form method="POST" action="/changePassword">
+                                                <input type="password" name="password" placeholder="Contraseña nueva"/>
+                                                <input type="submit" value="Cambiar"/>
+                                                <input type="hidden" name="_csrf" value="{{token}}"/>
+                                            </form>
                                         <p></p>
-                                        <a class="btn btn-red">Eliminar</a>
+	                                        <form action="/delete" method="post"
+	                                         onSubmit="return confirm('¿Estás seguro de que quieres borrar tu cuenta? No podrás recuperarla');">
+	                                        	<input class="btn btn-red" type="submit" value="ELIMINAR">
+	                                        	<input type="hidden" name="_csrf" value="{{token}}"/>
+	                                       	</form>
                                     </div>
+                                    <br>
+                                    <div class="card-body">
+                                        <h4 class="card-title">Cambiar Nombre</h4>
+                                        <form method="POST" action="/changeName">
+                                                <input type="text" name="newName" placeholder="{{name}}"/>
+                                                <input type="submit" value="Cambiar"/>
+                                                <input type="hidden" name="_csrf" value="{{token}}"/>
+                                            </form>
+                                     </div>
+                                     <br>
+                                     <div class="card-body">
+                                        <h4 class="card-title">Cambiar nombre de usuario</h4>
+                                        <form method="POST" action="/changeNickname">
+                                                <input type="text" name="newNickname" placeholder="{{nickname}}"/>
+                                                <input type="submit" value="Cambiar"/>
+                                                <input type="hidden" name="_csrf" value="{{token}}"/>
+                                            </form>
+                                     </div>
+                                     
                                 </div>
                             </div>
 
