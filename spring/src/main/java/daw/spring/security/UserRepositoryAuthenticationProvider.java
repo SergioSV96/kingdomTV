@@ -22,7 +22,10 @@ public class UserRepositoryAuthenticationProvider implements AuthenticationProvi
 
 	@Autowired
 	private UserRepository userRepository;
-
+	
+	@Autowired
+	private UserComponent userComponent;
+	
 	@Override
 	public Authentication authenticate(Authentication auth) throws AuthenticationException {
 
@@ -37,6 +40,9 @@ public class UserRepositoryAuthenticationProvider implements AuthenticationProvi
 			throw new BadCredentialsException("Wrong password");
 		}
 
+		//Save userRepository in session object
+		userComponent.setLoggedUser(user);
+		
 		List<GrantedAuthority> roles = new ArrayList<>();
 		for (String role : user.getRoles()) {
 			roles.add(new SimpleGrantedAuthority(role));
@@ -49,4 +55,5 @@ public class UserRepositoryAuthenticationProvider implements AuthenticationProvi
 	public boolean supports(Class<?> authenticationObject) {
 		return true;
 	}
+	
 }
