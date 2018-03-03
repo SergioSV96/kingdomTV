@@ -4,6 +4,7 @@ import java.security.Principal;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import daw.spring.Services.MoviesServices;
 import daw.spring.entities.Movie;
@@ -47,17 +49,12 @@ public class WebController {
         model.addAttribute("profileName","Iniciar sesión");
         return "index";
         */
-		
-		
-		throw new RuntimeException("Dummy Exception");
-		
-		
-		/*
+
 		model.addAttribute("profileName", "Test");
 		
 		return "index";
 		
-		*/
+		
     }
 	
 	
@@ -285,6 +282,11 @@ public class WebController {
         model.addAttribute("mailUser", "admin@kingdom.tv");
         return "showsPage";
     }
+  
+ ///////////////////////////////////////////////////////////////////////////////
+ 
+   
+    
 
 /////////////////////
 //USERS ADMIN METHODS

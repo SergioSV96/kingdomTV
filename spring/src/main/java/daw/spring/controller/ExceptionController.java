@@ -17,7 +17,7 @@ public class ExceptionController {
 	public String handleError(HttpServletRequest request, Exception exception){
 		logger.error("Request: " + request.getRequestURL() + " raised ", exception);
 		//logger.error("Request: " + request.getRequestURL() + " raised " + exception);
-		return "error";
+		return "redirect:/error";
 	
 	}
 	
