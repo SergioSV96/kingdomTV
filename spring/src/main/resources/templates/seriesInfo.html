@@ -63,36 +63,19 @@ Header
         </div>
 
         <nav id="nav-menu-container">
-            <ul class="nav-menu">
-                <li>
-                    <a href="../index">Inicio</a>
-                </li>
-                <li>
-                    <a href="../movies">Peliculas</a>
-                </li>
-                <li class="menu-active">
-                    <a href="../series">Series</a>
-                </li>
-                <li>
-                    <a href="../contact">Contacto</a>
-                </li>
-                <li class="menu-has-children">
-                    <a href="../profile">{{profileName}}</a>
-                    <ul>
-                        <li>
-                            <a href="../profile">Perfil</a>
-                        </li>
-                        <li>
-                            <a href="#">Configuración</a>
-                        </li>
-                        <li>
-                            <a href="#">Cerrar sesión</a>
-                        </li>
-                    </ul>
-                </li>
+        <ul class="nav-menu">
+          <li><a href="/">Inicio</a></li>
+          <li><a href="/movies">Peliculas</a></li>
+          <li><a href="/series">Series</a></li>
+          <li><a href="/contact">Contacto</a></li>
+          <li class="menu-has-children"><a href="/login">{{profileName}}</a>
+            <ul>
+              <li><a href="/profile">Perfil</a></li>
+              <li><a href="/logout">Cerrar sesión</a></li>
             </ul>
-        </nav>
-        <!-- #nav-menu-container -->
+          </li>
+        </ul>
+      </nav><!-- #nav-menu-container -->
     </div>
 </header>
 <!-- #header -->

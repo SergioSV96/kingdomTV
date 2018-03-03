@@ -66,36 +66,19 @@
             </div>
 
             <nav id="nav-menu-container">
-                <ul class="nav-menu">
-                    <li>
-                        <a href="index.html">Inicio</a>
-                    </li>
-                    <li>
-                        <a href="movies.html">Peliculas</a>
-                    </li>
-                    <li>
-                        <a href="series.html">Series</a>
-                    </li>
-                    <li>
-                        <a href="contact.html">Contacto</a>
-                    </li>
-                    <li class="menu-active" class="menu-has-children">
-                        <a href="login.html">{{name}}</a>
-                        <ul>
-                            <li>
-                                <a href="profile.html">Perfil</a>
-                            </li>
-                            <li>
-                                <a href="#">Configuración</a>
-                            </li>
-                            <li>
-                                <a href="#">Cerrar sesión</a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
-            <!-- #nav-menu-container -->
+        <ul class="nav-menu">
+          <li><a href="/">Inicio</a></li>
+          <li><a href="/movies">Peliculas</a></li>
+          <li><a href="/series">Series</a></li>
+          <li><a href="/contact">Contacto</a></li>
+          <li class="menu-has-children"><a href="/login">{{profileName}}</a>
+            <ul>
+              <li><a href="/profile">Perfil</a></li>
+              <li><a href="/logout">Cerrar sesión</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav><!-- #nav-menu-container -->
         </div>
     </header>
     <!-- #header -->
@@ -205,7 +188,7 @@
                                     <div class="card-body">
                                         <h4 class="card-title">Cambiar Nombre</h4>
                                         <form method="POST" action="/changeName">
-                                                <input type="text" name="newName" placeholder="{{name}}"/>
+                                                <input type="text" name="newName" placeholder="{{profileName}}"/>
                                                 <input type="submit" value="Cambiar"/>
                                                 <input type="hidden" name="_csrf" value="{{token}}"/>
                                             </form>

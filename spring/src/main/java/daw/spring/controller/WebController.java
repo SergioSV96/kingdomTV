@@ -82,7 +82,7 @@ public class WebController {
 	
 	
 	@RequestMapping(value= {"/","/index"})
-    public String index(Model model, Principal principal) {       
+    public String index(Model model) {       
 		
 		return showProfileName(model, "index");
     }
@@ -119,6 +119,16 @@ public class WebController {
         return "loginerror";
     }
 
+	
+	@RequestMapping("/logout")
+    public String logoutAction(Model model, HttpSession session){
+		if (userComponent.isLoggedUser()) {
+			logOut(session);
+			return index(model);
+		}
+		
+		return loginHTML(model);			
+    }
 	
 /////////////////////
 //REGISTER CONTROLLER
@@ -157,7 +167,7 @@ public class WebController {
 			return "login";
 		}
     	    	  	
-    	model.addAttribute("name", userComponent.getLoggedUser().getName());
+    	model.addAttribute("profileName", userComponent.getLoggedUser().getName());
     	model.addAttribute("nickname", userComponent.getLoggedUser().getNickname());
     	
     	if (userComponent.getLoggedUser().isImageUploaded()) {
