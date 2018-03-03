@@ -12,8 +12,12 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import daw.spring.entities.Genre;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,7 +25,6 @@ import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -38,6 +41,8 @@ import daw.spring.security.UserComponent;
 @Controller
 public class WebController {
 	
+	private static final Logger log = LoggerFactory.getLogger(WebController.class);
+	
 	@Autowired
 	private UserComponent userComponent;
 	@Autowired
@@ -47,6 +52,29 @@ public class WebController {
 	@Autowired
 	private SerieRepository serierepository;
 	
+	//Method that shows user name in all html's or button to login
+	public String showProfileName(Model model, String html) {				
+        if (userComponent.getLoggedUser() != null) {
+        	log.info("User (" + userComponent.getLoggedUser().getNickname() + ") Accessing "+ html);
+        	model.addAttribute("profileName", userComponent.getLoggedUser().getName());
+        	return html;
+        }
+        
+        log.info("Not logged user Accessing "+ html);
+    	model.addAttribute("profileName", "Inicio de sesión");
+    	return html;
+	}
+	
+	//Method that log outs user
+	public void logOut(HttpSession session) {
+		try {
+		log.info("User (" + userComponent.getLoggedUser().getNickname() + ") Logged out");
+		session.invalidate();
+		} catch (Exception e) {
+			
+		}
+	}
+	
 	
 /////////////////////
 //INDEX CONTROLLER
@@ -54,22 +82,11 @@ public class WebController {
 	
 	
 	@RequestMapping(value= {"/","/index"})
-    public String index(Model model, Principal principal) {
-        /*
-        log.info("Root path");
-        if (principal.getName() != null) {
-        	model.addAttribute("profileName", principal.getName());
-        }
-        model.addAttribute("profileName","Iniciar sesión");
-        return "index";
-        */
+    public String index(Model model, Principal principal) {       
 		
-		model.addAttribute("profileName", "Test");
-		
-		return "index";
+		return showProfileName(model, "index");
     }
 	
-
 	
 /////////////////////
 //ERROR CONTROLLER TODO
@@ -77,10 +94,10 @@ public class WebController {
 
 		/*
 		@RequestMapping("/error")
-		public String errorHTML(){
+		public String errorController(){
 		return "error";
 		}
-		*/	
+		*/
 	
 	
 /////////////////////
@@ -89,7 +106,11 @@ public class WebController {
 	
 	
 	@RequestMapping("/login")
-    public String loginHTML(){
+    public String loginHTML(Model model){
+		if (userComponent.isLoggedUser()) {
+			return profileController(model);
+		}
+			
         return "login";
     }
 
@@ -105,10 +126,9 @@ public class WebController {
 	
 	
     @RequestMapping("/register")
-    public String registerHTML(Model model){
-
-        model.addAttribute("profileName","Prueba de KingomTV");
-
+    public String registerHTML(Model model, HttpSession session){    	
+    	logOut(session);
+    	
         return "register";
     }
     
@@ -117,6 +137,9 @@ public class WebController {
     						   @RequestParam String email, @RequestParam String pass){
        
     	userRepository.save(new User(name, nick, email, pass, "ROLE_USER"));
+    	
+    	log.info("User (" + nick + ") CREATED AN ACCOUNT");
+    	
         return "login";
         
     }
@@ -133,10 +156,7 @@ public class WebController {
     	if (!userComponent.isLoggedUser()) {
 			return "login";
 		}
-    	
-    	//TODO REVIEW THIS LINE WHEN LOG OUT IS FINISHED
-    	userComponent.setLoggedUser(userRepository.findByNickname(userComponent.getLoggedUser().getNickname()));
-			
+    	    	  	
     	model.addAttribute("name", userComponent.getLoggedUser().getName());
     	model.addAttribute("nickname", userComponent.getLoggedUser().getNickname());
     	
@@ -221,12 +241,13 @@ public class WebController {
     //CHANGING PASSWORD 
     //(POST)
     @PostMapping("/changePassword")
-    public String changePassword(@RequestParam String password){
+    public String changePassword(@RequestParam String password, HttpSession session) {
     	
     	userComponent.getLoggedUser().setPasswordHash(password);
     	userRepository.save(userComponent.getLoggedUser());
     	
-    	//TODO INCLUDE LOG OUT HERE
+    	//Log outs user
+    	logOut(session);
     	
     	return "login";
         
@@ -235,9 +256,8 @@ public class WebController {
     //DELETE ACCOUNT
     //(POST)
     @PostMapping("/delete")
-    public String delete(Model model) throws IOException{
+    public String delete(Model model, HttpSession session) throws IOException{
     	    	  	
-    	//TODO DELETE PROFILE IMAGE if (userComponent.getLoggedUser().isImageUploaded())
     	if (userComponent.getLoggedUser().isImageUploaded()) {
     		
     		 Files.delete(FILES_FOLDER.resolve(userComponent.getLoggedUser().getNickname()
@@ -247,16 +267,17 @@ public class WebController {
     	
     	userRepository.delete(userComponent.getLoggedUser());
     	
-    	//TODO INCLUDE LOG OUT HERE
+    	//Log outs user
+    	logOut(session);
     	    	
-    	return registerHTML(model);
+    	return registerHTML(model, session);
         
     }
     
     //CHANGING NAME 
     //(POST)
     @PostMapping("/changeName")
-    public String changeName(Model model, @RequestParam String newName){
+    public String changeName(Model model, @RequestParam String newName) {
     	
     	userComponent.getLoggedUser().setName(newName);;
     	userRepository.save(userComponent.getLoggedUser());
@@ -268,7 +289,7 @@ public class WebController {
     //CHANGING NICKNAME 
     //(POST)
     @PostMapping("/changeNickname")
-    public String changeNickname(Model model, @RequestParam String newNickname){
+    public String changeNickname(Model model, @RequestParam String newNickname) {
     	
     	userComponent.getLoggedUser().setNickname(newNickname);;
     	userRepository.save(userComponent.getLoggedUser());
@@ -284,11 +305,9 @@ public class WebController {
     
     
     @RequestMapping("/about")
-    public String aboutHTML(Model model){
+    public String aboutHTML(Model model) {
 
-        model.addAttribute("profileName","Prueba de KingomTV");
-
-        return "about";
+        return showProfileName(model, "about");
     }
     
     
@@ -298,11 +317,9 @@ public class WebController {
     
     
     @RequestMapping("/contact")
-    public String contactHTML(Model model){
+    public String contactHTML(Model model) {
 
-        model.addAttribute("profileName","Prueba de KingomTV");
-
-        return "contact";
+    	return showProfileName(model, "about");
     }
     
     
@@ -312,8 +329,7 @@ public class WebController {
     
     
     @RequestMapping("/moviesInfo/{id}")
-    public String MoviesInfoHTML(Model model, @PathVariable int id)
-    {
+    public String MoviesInfoHTML(Model model, @PathVariable int id) {
 
         Movie movie = new ApiParser().SearchOneFilmTMDB(Integer.toString(id));
 
@@ -323,10 +339,7 @@ public class WebController {
         model.addAttribute("voteAverage", movie.getVoteAverage());
         model.addAttribute("poster", movie.getPoster());
 
-        model.addAttribute("profileName", "USUARIO");
-
-
-        return "moviesInfo";
+        return showProfileName(model, "moviesInfo");
     }
     
     
@@ -345,16 +358,13 @@ public class WebController {
 	*/
 	
     @RequestMapping("/movies")
-    public String peliculasHTML(Model model)
-    {
-
-        model.addAttribute("profileName","Prueba de KingomTV");
+    public String peliculasHTML(Model model) {
 
         List<Movie> sf = new ApiParser().SearchFilms("Lost");
 
         model.addAttribute("recommendedFilms", sf);
 
-        return "movies";
+        return showProfileName(model, "movies");
     }
     
     
@@ -364,10 +374,9 @@ public class WebController {
     
     
     @RequestMapping("/seriesInfo/{id}")
-    public String SeriesInfoHTML(Model model, @PathVariable int id)
-    {
+    public String SeriesInfoHTML(Model model, @PathVariable int id) {
 
-        Serie serie = new ApiParser().SearchOneSerieTMDB(Integer.toString(id));
+    	Serie serie = new ApiParser().SearchOneSerieTMDB(Integer.toString(id));
 
         model.addAttribute("title", serie.getTitle());
         model.addAttribute("overview", serie.getSynopsis());
@@ -375,10 +384,7 @@ public class WebController {
         model.addAttribute("voteAverage", serie.getVoteAverage());
         model.addAttribute("poster", serie.getPoster());
 
-        model.addAttribute("profileName", "USUARIO");
-
-
-        return "seriesInfo";
+        return showProfileName(model, "seriesInfo");
     }
     
     
@@ -394,15 +400,13 @@ public class WebController {
     }
 
     @RequestMapping("/series")
-    public String seriesHTML(Model model){
-
-        model.addAttribute("profileName","Prueba de KingomTV");
+    public String seriesHTML(Model model) {
 
         List<Serie> ss = new ApiParser().SearchSeries("Lost");
 
         model.addAttribute("recommendedSeries", ss);
 
-        return "series";
+        return showProfileName(model, "series");
     }
     
     
@@ -412,14 +416,15 @@ public class WebController {
     
     
     @RequestMapping("/adminMain")
-    public String adminHTML(Model model){
-        model.addAttribute("profileName", "Administrador");
+    public String adminHTML(Model model) {
+    	
         model.addAttribute("mailUser", "admin@kingdom.tv");
-        return "adminMain";
+        
+        return showProfileName(model, "adminMain");
     }
 
     @RequestMapping("/moviesPage")
-    public String moviesPageHTML(Model model){
+    public String moviesPageHTML(Model model) {
 
         List<Genre> gr = new ArrayList<Genre>();
         gr.add(new Genre("Drama"));
@@ -430,35 +435,32 @@ public class WebController {
 
         model.addAttribute("movies", movieRepository.findAll());
 
-        model.addAttribute("profileName", "Administrador");
         model.addAttribute("mailUser", "admin@kingdom.tv");
 
-        return "moviesPage";
+        return showProfileName(model, "moviesPage");
     }
 
     @RequestMapping("/moviesPage/delete/{id}")
-    public String moviesPageHTML(Model model, @PathVariable long id)
-    {
+    public String moviesPageHTML(Model model, @PathVariable long id) {
         movieRepository.delete(id);
-        model.addAttribute("profileName", "Administrador");
         model.addAttribute("mailUser", "admin@kingdom.tv");
-        return "moviesPage";
+        
+        return showProfileName(model, "moviesPage");
     }
 
     @RequestMapping("/showsPage")
-    public String showsPageHTML(Model model){
-        model.addAttribute("profileName", "Administrador");
+    public String showsPageHTML(Model model) {
         model.addAttribute("mailUser", "admin@kingdom.tv");
-        return "showsPage";
+        
+        return showProfileName(model, "showsPage");
     }
 
     @RequestMapping("/showsPage/delete/{id}")
-    public String showsPageHTML(Model model, @PathVariable long id)
-    {
+    public String showsPageHTML(Model model, @PathVariable long id) {
         serierepository.delete(id);
-        model.addAttribute("profileName", "Administrador");
         model.addAttribute("mailUser", "admin@kingdom.tv");
-        return "showsPage";
+        
+        return showProfileName(model, "showsPage");
     }
 
 /////////////////////
@@ -466,22 +468,19 @@ public class WebController {
 /////////////////////
 
     @RequestMapping("/usersPage")
-    public String usersPageHTML(Model model)
-    {
+    public String usersPageHTML(Model model) {
 
         model.addAttribute("users", userRepository.findAll());
-        model.addAttribute("profileName", "Administrador");
         model.addAttribute("mailUser", "admin@kingdom.tv");
-        return "usersPage";
+
+        return showProfileName(model, "usersPage");
     }
 
     @RequestMapping("/usersPage/delete/{id}")
-    public String usersPageHTML(Model model, @PathVariable long id)
-    {
+    public String usersPageHTML(Model model, @PathVariable long id) {
         userRepository.delete(id);
-        model.addAttribute("profileName", "Administrador");
         model.addAttribute("mailUser", "admin@kingdom.tv");
-        return "usersPage";
+        return showProfileName(model, "usersPage");
     }
 
 /////////////////////////
@@ -489,11 +488,10 @@ public class WebController {
 /////////////////////////
 
     @RequestMapping("/messagesPage")
-    public String messagesPageHTML(Model model)
-    {
-        model.addAttribute("profileName", "Administrador");
+    public String messagesPageHTML(Model model) {
         model.addAttribute("mailUser", "admin@kingdom.tv");
-        return "messagesPage";
+        
+        return showProfileName(model, "messagesPage");
     }
     
 	
