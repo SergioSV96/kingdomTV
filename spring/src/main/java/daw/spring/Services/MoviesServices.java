@@ -4,9 +4,11 @@ import daw.spring.entities.Movie;
 import daw.spring.repositories.MovieRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
@@ -27,5 +29,9 @@ public class MoviesServices {
         return movieRepository.findOne(id);
     }
 
+
+    private Pageable createPageRequest() {
+        return new PageRequest(0, 10);
+    }
 
 }
