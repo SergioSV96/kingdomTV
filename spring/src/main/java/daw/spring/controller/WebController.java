@@ -368,7 +368,7 @@ public class WebController {
 	*/
 	
     @RequestMapping("/movies")
-    public String peliculasHTML(Model model) {
+    public String moviesHTML(Model model) {
 
         List<Movie> sf = new ApiParser().SearchFilms("Lost");
 
@@ -376,7 +376,18 @@ public class WebController {
 
         return showProfileName(model, "movies");
     }
-    
+
+    @RequestMapping("/movieSearch")
+    public String moviesSearch(Model model, @PathVariable("searchMovie") String searchMovie) {
+
+        List<Movie> sf = new ApiParser().SearchFilms(searchMovie);
+
+        model.addAttribute("recommendedFilms", sf);
+
+        return showProfileName(model, "movieSearch");
+    }
+
+
     
 /////////////////////////
 //SERIES INFO CONTROLLER
