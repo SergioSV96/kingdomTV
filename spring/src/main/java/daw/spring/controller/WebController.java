@@ -329,7 +329,7 @@ public class WebController {
     @RequestMapping("/contact")
     public String contactHTML(Model model) {
 
-    	return showProfileName(model, "about");
+    	return showProfileName(model, "contact");
     }
     
     
