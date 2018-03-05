@@ -14,25 +14,15 @@ import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
-public class MoviesServices {
+public class CommentServices {
+
 
     @Autowired
-    private MovieRepository movieRepository;
+    private CommentRepository commentRepository;
 
-    public Page<Movie> getAllFilms(Pageable page) {
-        return movieRepository.findAll(page);
-    }
-
-    public List<Movie> getAllFilms() {
-        return movieRepository.findAll();
-    }
-
-    public Movie findOne(long id) {
-        return movieRepository.findOne(id);
-    }
-
-    private Pageable createPageRequest() {
-        return new PageRequest(0, 10);
+    public List<Comment> getCommentsFromFilm(String id)
+    {
+        return commentRepository.findByItem_id(id);
     }
 
 }

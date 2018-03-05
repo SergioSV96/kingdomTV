@@ -1,11 +1,6 @@
 package daw.spring.entities;
 
-import javax.persistence.Entity;
-
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 
 @Entity
@@ -15,61 +10,51 @@ public class Comment {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
-		
-	//User that commented
-	@ManyToOne
-	private User user;
-	
-	//Movie commented
-	@ManyToOne
-	private Movie movie;
-	
-	//Message written
+
+
+	private long user;
+
+	private String item_id; //M-001, S-001
+
 	private String message;
-	
-	//Constructor needed to load from the database
-    protected Comment() {}
-    
-    //Constructor with variables
-    public Comment(User user, String msg) {
-    	this.user = user;
-    	this.message = msg;
+
+	public Comment(long user, String item_id, String message)
+    {
+        this.user = user;
+        this.item_id = item_id;
+        this.message = message;
     }
-    
-    
-    //Getters and Setters
 
-	public long getId() {
-		return id;
-	}
+    public void setId(long id) {
+        this.id = id;
+    }
 
-	public void setId(long id) {
-		this.id = id;
-	}
+    public long getId() {
+        return id;
+    }
 
-	public User getUser() {
-		return user;
-	}
+    public String getItem_id() {
+        return item_id;
+    }
 
-	public void setUser(User user) {
-		this.user = user;
-	}
+    public void setItem_id(String item_id) {
+        this.item_id = item_id;
+    }
 
-	public Movie getMovie() {
-		return movie;
-	}
+    public long getUser() {
+        return user;
+    }
 
-	public void setMovie(Movie movie) {
-		this.movie = movie;
-	}
+    public void setUser(long user) {
+        this.user = user;
+    }
 
-	public String getMessage() {
-		return message;
-	}
+    public String getMessage() {
+        return message;
+    }
 
-	public void setMessage(String message) {
-		this.message = message;
-	}
+    public void setMessage(String message) {
+        this.message = message;
+    }
 
-    
 }
