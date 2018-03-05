@@ -14,10 +14,8 @@ import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import daw.spring.Services.CommentServices;
-import daw.spring.entities.*;
+import daw.spring.entities.Genre;
 
-import daw.spring.repositories.CommentRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,6 +29,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import daw.spring.Services.MoviesServices;
+import daw.spring.entities.Movie;
+import daw.spring.entities.Serie;
+import daw.spring.entities.User;
 import daw.spring.javaclass.ApiParser;
 import daw.spring.repositories.MovieRepository;
 import daw.spring.repositories.SerieRepository;
@@ -66,14 +67,11 @@ public class WebController {
 	
 	//Method that log outs user
 	public void logOut(HttpSession session) {
-		try
-        {
+		try {
 		log.info("User (" + userComponent.getLoggedUser().getNickname() + ") Logged out");
 		session.invalidate();
-		}
-		catch (Exception e)
-        {
-            log.info(e.toString());
+		} catch (Exception e) {
+			
 		}
 	}
 	
@@ -338,8 +336,7 @@ public class WebController {
 ///////////////////////
 //MOVIE INFO CONTROLLER
 ///////////////////////
-
-
+    
     
     @RequestMapping("/moviesInfo/{id}")
     public String MoviesInfoHTML(Model model, @PathVariable int id) {
@@ -352,28 +349,9 @@ public class WebController {
         model.addAttribute("voteAverage", movie.getVoteAverage());
         model.addAttribute("poster", movie.getPoster());
 
-
-        if (userComponent.isLoggedUser())
-        {
-            CommentServices ms = new CommentServices();
-            List<Comment> comments = ms.getCommentsFromFilm("F-" + movie.getIdLocal());
-
-            if (comments != null)
-            {
-                model.addAttribute("messagesMovies", comments);
-            }
-            else
-            {
-                model.addAttribute("messagesMovies", null);
-            }
-        }
-        else
-        {
-            model.addAttribute("messagesMovies", null);
-        }
-
         return showProfileName(model, "moviesInfo");
     }
+    
     
 /////////////////////
 //MOVIES CONTROLLER
