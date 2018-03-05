@@ -97,21 +97,3 @@ Screenshots of the pages
 7. Login: Here you can enter your account details and login.
 
 ![alt text](https://github.com/SergioSV96/kingdomTV/blob/master/KingdomTV_ScreenShots/7.JPG "Login")
-
-### Started Instructions
-In order to start the application you will need the MySQL database, for that you have to install MySQLCommunity Server and MySQL Workbench.
-
-Once you have installed and configured it, you will need to access the MySQL command line, called MySQL Command Line, just run the following commands to initialize the database:
-
-mysql> create database kingdomtv; -- Create the new database
-
-mysql> create user' admin' @' localhost' identified by' pass'; -- Creates the user
-
-mysql> grant all on kingdomtv.* to' admin' @' localhost'; -- Gives all the privileges to the new user on the newly created database
-
-From the above we can say that a database called kingdomTV is created and its user root or admin is the user "admin" and its countess is "pass", this can be modified in the application. properties area.
-
-Once we have started the database we can run the program in spring, or the. jar with the tomcat browser.
-
-Translated with www.DeepL.com/Translator
-
