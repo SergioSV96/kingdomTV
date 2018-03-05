@@ -108,7 +108,7 @@ Screenshots of the pages
 
 10. Profile: Here you can see the profile page.
 
-![alt text](https://github.com/SergioSV96/kingdomTV/blob/master/KingdomTV_ScreenShots/8.JPG "Profile")
+![alt text](https://github.com/SergioSV96/kingdomTV/blob/master/KingdomTV_ScreenShots/8.png "Profile")
 
 
 ### Started Instructions
@@ -124,4 +124,4 @@ mysql> grant all on kingdomtv.* to' admin' @' localhost'; -- Gives all the privi
 
 From the above we can say that a database called kingdomTV is created and its user root or admin is the user "admin" and its countess is "pass", this can be modified in the application. properties area.
 
-Once we have started the database we can run the p
+Once we have started the database we can run the program in spring, or the. jar with the tomcat browser.
