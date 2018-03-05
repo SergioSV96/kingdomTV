@@ -27,7 +27,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		http.headers().frameOptions().disable();
     	*/
 
-        http.csrf().disable();
+       // http.csrf().disable();
 
 
     	// Public pages
@@ -40,11 +40,11 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         http.authorizeRequests().antMatchers("/index").permitAll();
         http.authorizeRequests().antMatchers("/movies").permitAll();
         http.authorizeRequests().antMatchers("/moviesInfo/**").permitAll();
-        http.authorizeRequests().antMatchers("/movieSearch").permitAll();
+        http.authorizeRequests().antMatchers("/movieSearch/**").permitAll();
         http.authorizeRequests().antMatchers("/register").permitAll();
         http.authorizeRequests().antMatchers("/series").permitAll();
         http.authorizeRequests().antMatchers("/seriesInfo/**").permitAll();
-        http.authorizeRequests().antMatchers("/serieSearch").permitAll();
+        http.authorizeRequests().antMatchers("/serieSearch/**").permitAll();
         
         // Private pages (all other pages)
         http.authorizeRequests().antMatchers("/profile").hasAnyRole("USER");
