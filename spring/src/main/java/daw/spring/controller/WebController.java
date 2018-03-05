@@ -378,11 +378,11 @@ public class WebController {
     }
 
     @RequestMapping("/movieSearch")
-    public String moviesSearch(Model model, @PathVariable("searchMovie") String searchMovie) {
+    public String moviesSearch(Model model, @RequestParam String searchMovie) {
 
         List<Movie> sf = new ApiParser().SearchFilms(searchMovie);
 
-        model.addAttribute("recommendedFilms", sf);
+        model.addAttribute("searchMovies", sf);
 
         return showProfileName(model, "movieSearch");
     }
@@ -429,8 +429,18 @@ public class WebController {
 
         return showProfileName(model, "series");
     }
-    
-    
+
+    @RequestMapping("/serieSearch")
+    public String seriesSearch(Model model, @RequestParam String searchSerie) {
+
+        List<Serie> ss = new ApiParser().SearchSeries(searchSerie);
+
+        model.addAttribute("searchSeries", ss);
+
+        return showProfileName(model, "serieSearch");
+    }
+
+
 /////////////////////
 //ADMIN CONTROLLER
 /////////////////////
